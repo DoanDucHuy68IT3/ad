@@ -1,0 +1,53 @@
+.architecture-section {
+  background: var(--bg-0);
+
+  h2 { font-size: clamp(26px, 3.2vw, 38px); max-width: 620px; margin: 12px 0 56px; }
+}
+
+.pipeline {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 0;
+  padding-bottom: 12px;
+
+  @media (max-width: 860px) { flex-direction: column; align-items: stretch; }
+}
+
+.node { display: flex; align-items: center; flex: 1; min-width: 220px; }
+
+.node-card {
+  flex: 1;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+
+  .index {
+    display: inline-flex;
+    width: 32px; height: 32px;
+    align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), var(--violet));
+    color: #06090f;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  h3 { font-size: 16px; margin-bottom: 8px; }
+  p { font-size: 13px; }
+}
+
+.connector {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan-dim), transparent);
+  flex-shrink: 0;
+
+  @media (max-width: 860px) {
+    width: 2px;
+    height: 32px;
+    margin-left: 16px;
+  }
+}

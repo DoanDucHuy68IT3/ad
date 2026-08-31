@@ -1,0 +1,19 @@
+<section class="section architecture-section">
+  <span class="eyebrow">Kiến trúc hệ thống</span>
+  <h2>Từ ống kính camera đến bảng điều khiển của bạn</h2>
+
+  <div class="pipeline">
+    @for (s of steps; track s.title; let i = $index; let last = $last) {
+      <div class="node">
+        <div class="node-card">
+          <span class="index">{{ i + 1 }}</span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.desc }}</p>
+        </div>
+      </div>
+      @if (!last) {
+        <div class="connector"></div>
+      }
+    }
+  </div>
+</section>

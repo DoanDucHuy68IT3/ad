@@ -1,0 +1,24 @@
+<section id="ai-demo" class="section demo-section">
+  <span class="eyebrow">Trải nghiệm trực tiếp</span>
+  <h2>AI phát hiện theo thời gian thực</h2>
+  <p class="lead">Chọn chế độ để xem cách mô hình AI khoanh vùng và gắn nhãn đối tượng ngay trên khung hình.</p>
+
+  <div class="demo-modes">
+    @for (m of modes; track m; let i = $index) {
+      <button [class.active]="activeMode() === i" (click)="setMode(i)">{{ m }}</button>
+    }
+  </div>
+
+  <div class="demo-frame">
+    <img src="assets/demo/frame-{{ activeMode() + 1 }}.jpg" alt="Khung hình demo AI" />
+    @for (box of boxes; track box.label) {
+      <div class="box"
+           [style.left.%]="box.x"
+           [style.top.%]="box.y"
+           [style.width.%]="box.w"
+           [style.height.%]="box.h">
+        <span class="label">{{ box.label }} · {{ box.confidence }}%</span>
+      </div>
+    }
+  </div>
+</section>

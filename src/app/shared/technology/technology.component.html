@@ -1,0 +1,13 @@
+<section class="section technology-section">
+  <span class="eyebrow">Công nghệ nền tảng</span>
+  <h2>Được xây dựng trên nền tảng phần cứng và AI mã nguồn mở đáng tin cậy</h2>
+
+  <div class="tech-grid">
+    @for (t of stack; track t.name) {
+      <div class="tech-item">
+        <h3>{{ t.name }}</h3>
+        <p>{{ t.role }}</p>
+      </div>
+    }
+  </div>
+</section>

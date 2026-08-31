@@ -1,0 +1,36 @@
+<section id="final-cta" class="section cta-section">
+  <div class="cta-inner">
+    <div class="cta-copy">
+      <span class="eyebrow">Bắt đầu ngay hôm nay</span>
+      <h2>Sẵn sàng nâng cấp hệ thống camera của bạn với AI?</h2>
+      <p>Đặt lịch demo trực tiếp tại cơ sở của bạn, đội ngũ kỹ thuật sẽ tư vấn giải pháp phù hợp trong 24h.</p>
+
+      <ul class="benefits">
+        <li>Khảo sát và tư vấn miễn phí</li>
+        <li>Lắp đặt trong vòng 48 giờ</li>
+        <li>Bảo hành phần cứng 24 tháng</li>
+      </ul>
+    </div>
+
+    <div class="cta-form">
+      @if (!submitted()) {
+        <h3>Đăng ký nhận demo</h3>
+        <label>
+          Họ và tên
+          <input type="text" [value]="name()" (input)="name.set($any($event.target).value)" placeholder="Nguyễn Văn A" />
+        </label>
+        <label>
+          Số điện thoại
+          <input type="tel" [value]="phone()" (input)="phone.set($any($event.target).value)" placeholder="09xx xxx xxx" />
+        </label>
+        <button class="btn btn-primary" (click)="submit()">Gửi yêu cầu</button>
+      } @else {
+        <div class="success">
+          <span>✓</span>
+          <h3>Cảm ơn bạn!</h3>
+          <p>Đội ngũ AI Camera sẽ liên hệ trong vòng 24 giờ tới.</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

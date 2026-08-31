@@ -1,0 +1,17 @@
+@let it = item();
+
+<article class="application-card">
+  <div class="image-wrap">
+    <img [src]="it.image" [alt]="it.title" loading="lazy" />
+  </div>
+  <div class="content">
+    <span class="icon">{{ it.icon }}</span>
+    <h3>{{ it.title }}</h3>
+    <p>{{ it.description }}</p>
+    <ul>
+      @for (m of it.metrics; track m) {
+        <li>{{ m }}</li>
+      }
+    </ul>
+  </div>
+</article>

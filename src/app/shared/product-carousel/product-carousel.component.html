@@ -1,0 +1,61 @@
+```html
+<section
+  class="section carousel-section"
+  (mouseenter)="pause()"
+  (mouseleave)="resume()"
+>
+  <div class="carousel-head">
+
+    <div>
+      <span class="eyebrow">
+        Dòng sản phẩm
+      </span>
+
+      <h2>
+        Camera cho mọi bài toán giám sát
+      </h2>
+    </div>
+
+    <div class="carousel-controls">
+
+      <button
+        type="button"
+        (click)="scroll('left')"
+        aria-label="Camera trước"
+      >
+        ←
+      </button>
+
+      <button
+        type="button"
+        (click)="scroll('right')"
+        aria-label="Camera tiếp theo"
+      >
+        →
+      </button>
+
+    </div>
+
+  </div>
+
+  <div
+    class="carousel-viewport"
+    #viewport
+  >
+    <div class="track">
+
+      @for (cam of cameras; track cam.id) {
+
+        <div class="card-wrapper">
+          <app-product-card
+            [camera]="cam"
+          />
+        </div>
+
+      }
+
+    </div>
+  </div>
+
+</section>
+```

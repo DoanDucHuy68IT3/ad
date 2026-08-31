@@ -1,0 +1,14 @@
+<section class="section feature-section">
+  <span class="eyebrow">Năng lực cốt lõi</span>
+  <h2>Bốn khả năng AI được huấn luyện riêng cho từng ngành</h2>
+
+  <div class="feature-grid">
+    @for (f of features; track f.id) {
+      <div class="feature-card">
+        <span class="icon">{{ f.icon }}</span>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.description }}</p>
+      </div>
+    }
+  </div>
+</section>

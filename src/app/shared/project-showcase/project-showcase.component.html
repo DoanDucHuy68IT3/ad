@@ -1,0 +1,25 @@
+<section class="section showcase-section">
+  <span class="eyebrow">Dự án tiêu biểu</span>
+  <h2>Đã triển khai thực tế, đo lường được hiệu quả</h2>
+
+  <div class="showcase-list">
+    @for (p of projects; track p.id) {
+      <article class="showcase-item">
+        <div class="media">
+          <img [src]="p.image" [alt]="p.name" loading="lazy" />
+          <span class="play">▶</span>
+        </div>
+        <div class="info">
+          <span class="category">{{ p.category }} · {{ p.location }}</span>
+          <h3>{{ p.name }}</h3>
+          <p>{{ p.description }}</p>
+          <div class="tags">
+            @for (t of p.tags; track t) {
+              <span>{{ t }}</span>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,12 @@
+.applications-section {
+  background: var(--bg-1);
+  h2 { font-size: clamp(26px, 3.2vw, 38px); max-width: 620px; margin: 12px 0 48px; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}

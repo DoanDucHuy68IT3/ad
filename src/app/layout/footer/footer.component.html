@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="footer-top">
+    <div class="brand">
+      <a class="logo" routerLink="/">
+        <span class="dot"></span>
+        <span>AI<strong>Camera</strong></span>
+      </a>
+      <p>Giải pháp camera AI giám sát thông minh — nhìn thấy, thấu hiểu và hành động theo thời gian thực.</p>
+    </div>
+
+    @for (col of columns; track col.title) {
+      <div class="col">
+        <h4>{{ col.title }}</h4>
+        <ul>
+          @for (link of col.links; track link) {
+            <li>{{ link }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {{ year }} AI Camera. Bảo lưu mọi quyền.</span>
+    <span>Powered by ESP32 · YOLO Edge AI</span>
+  </div>
+</footer>

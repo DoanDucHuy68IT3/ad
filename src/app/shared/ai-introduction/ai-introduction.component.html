@@ -1,0 +1,20 @@
+<section class="section ai-intro">
+  <div class="intro-head">
+    <span class="eyebrow">Vì sao chọn AI Camera</span>
+    <h2>Thấy. Hiểu. Hành động — chỉ trong một khung hình.</h2>
+    <p>
+      Chúng tôi kết hợp phần cứng camera chi phí hợp lý với mô hình thị giác máy tính hiện đại,
+      biến mỗi chiếc camera thành một cảm biến thông minh biết ra quyết định.
+    </p>
+  </div>
+
+  <div class="pillars">
+    @for (p of pillars; track p.title; let i = $index) {
+      <div class="pillar">
+        <span class="index">{{ (i + 1).toString().padStart(2, '0') }}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </div>
+    }
+  </div>
+</section>

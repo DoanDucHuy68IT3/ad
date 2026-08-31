@@ -1,0 +1,29 @@
+@let cam = camera();
+
+<article class="product-card">
+  <div class="thumb">
+    <img [src]="cam.image" [alt]="cam.name" loading="lazy" />
+    <span class="badge">{{ cam.category }}</span>
+  </div>
+
+  <div class="body">
+    <h3>{{ cam.name }}</h3>
+    <p>{{ cam.description }}</p>
+
+    <ul class="specs">
+      <li>{{ cam.resolution }}</li>
+      <li>{{ cam.fps }} FPS</li>
+    </ul>
+
+    <div class="tags">
+      @for (f of cam.aiFeatures; track f) {
+        <span class="tag">{{ f }}</span>
+      }
+    </div>
+
+    <div class="footer">
+      <span class="price">{{ cam.price }}</span>
+      <a class="btn btn-ghost" href="#final-cta">Xem chi tiết</a>
+    </div>
+  </div>
+</article>

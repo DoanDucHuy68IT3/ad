@@ -1,0 +1,77 @@
+.cta-section { background: var(--bg-0); }
+
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 56px;
+  background: linear-gradient(135deg, rgba(53,224,224,.06), rgba(124,107,255,.06));
+
+  @media (max-width: 860px) { grid-template-columns: 1fr; padding: 32px; }
+}
+
+.cta-copy {
+  h2 { font-size: clamp(26px, 3.2vw, 38px); margin: 12px 0 16px; }
+  p { margin-bottom: 24px; }
+
+  .benefits {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 10px;
+
+    li {
+      font-size: 14px; color: var(--text-0);
+      padding-left: 24px;
+      position: relative;
+      &::before { content: '✓'; position: absolute; left: 0; color: var(--cyan); }
+    }
+  }
+}
+
+.cta-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+
+  h3 { font-size: 18px; margin-bottom: 20px; }
+
+  label {
+    display: flex; flex-direction: column; gap: 8px;
+    font-size: 13px; color: var(--text-1);
+    margin-bottom: 16px;
+  }
+
+  input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-1);
+    color: var(--text-0);
+    font-size: 14px;
+    outline: none;
+
+    &:focus { border-color: var(--cyan); }
+  }
+
+  .btn { width: 100%; justify-content: center; margin-top: 8px; }
+}
+
+.success {
+  text-align: center;
+  padding: 24px 0;
+
+  span {
+    display: inline-flex;
+    width: 48px; height: 48px;
+    align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--cyan);
+    color: #06090f;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  h3 { margin-bottom: 8px; }
+}

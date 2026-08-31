@@ -1,0 +1,36 @@
+.ai-intro { background: var(--bg-0); }
+
+.intro-head {
+  max-width: 620px;
+  margin-bottom: 64px;
+
+  h2 { font-size: clamp(28px, 3.6vw, 42px); margin-bottom: 16px; }
+  p { font-size: 16px; }
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  @media (max-width: 860px) { grid-template-columns: 1fr; }
+}
+
+.pillar {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color .2s ease, transform .2s ease;
+
+  &:hover { border-color: var(--cyan-dim); transform: translateY(-4px); }
+
+  .index {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--cyan);
+    letter-spacing: .1em;
+  }
+
+  h3 { font-size: 20px; margin: 16px 0 10px; }
+}

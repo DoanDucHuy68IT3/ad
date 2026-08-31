@@ -1,0 +1,10 @@
+<section class="section applications-section">
+  <span class="eyebrow">Ứng dụng thực tế</span>
+  <h2>Một nền tảng AI, nhiều bài toán ngành nghề</h2>
+
+  <div class="grid">
+    @for (item of items; track item.title) {
+      <app-application-card [item]="item" />
+    }
+  </div>
+</section>

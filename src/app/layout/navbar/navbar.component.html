@@ -1,0 +1,270 @@
+<nav
+  class="navbar"
+  [class.scrolled]="scrolled()"
+>
+
+  <div class="navbar-inner">
+
+    <!-- LOGO -->
+
+    <a
+      routerLink="/"
+      class="logo"
+      (click)="closeMenu()"
+    >
+      <img
+        src="/images/logo/logo.svg"
+        alt="Logo"
+      />
+    </a>
+
+
+    <!-- DESKTOP MENU -->
+
+    <div class="desktop-menu">
+
+      @for (link of links; track link.path) {
+
+        @if (link.children) {
+
+          <div
+            class="nav-dropdown"
+            (mouseenter)="productsOpen.set(true)"
+            (mouseleave)="productsOpen.set(false)"
+          >
+
+            <button
+              class="nav-link dropdown-trigger"
+              type="button"
+            >
+              {{ link.label }}
+
+              <span
+                class="arrow"
+                [class.rotate]="productsOpen()"
+              >
+                ↓
+              </span>
+            </button>
+
+
+            <!-- DROPDOWN -->
+
+            @if (productsOpen()) {
+
+              <div class="dropdown-menu">
+
+                <div class="dropdown-header">
+
+                  <span>
+                    PRODUCTS
+                  </span>
+
+                  <p>
+                    AI & IoT solutions
+                  </p>
+
+                </div>
+
+
+                <div class="dropdown-grid">
+
+                  @for (
+                    product of link.children;
+                    track product.path
+                  ) {
+
+                    <a
+                      [routerLink]="product.path"
+                      routerLinkActive="active"
+                      class="product-item"
+                      (click)="closeMenu()"
+                    >
+
+                      <div class="product-icon">
+
+                        @switch (product.label) {
+
+                          @case ('AI Camera') {
+                            ◉
+                          }
+
+                          @case ('Healthcare IoT') {
+                            +
+                          }
+
+                          @case ('Agriculture IoT') {
+                            ◌
+                          }
+
+                          @case ('Construction IoT') {
+                            ⌂
+                          }
+
+                          @case ('Industrial IoT') {
+                            ⚙
+                          }
+
+                          @case ('Smart Home') {
+                            ⌂
+                          }
+
+                        }
+
+                      </div>
+
+
+                      <div>
+
+                        <strong>
+                          {{ product.label }}
+                        </strong>
+
+                        <span>
+                          {{ product.description }}
+                        </span>
+
+                      </div>
+
+                    </a>
+
+                  }
+
+                </div>
+
+
+                <a
+                  routerLink="/products"
+                  class="view-all"
+                  (click)="closeMenu()"
+                >
+                  Xem tất cả sản phẩm →
+                </a>
+
+              </div>
+
+            }
+
+          </div>
+
+        } @else {
+
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{
+              exact: link.path === '/'
+            }"
+            class="nav-link"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+
+        }
+
+      }
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <a
+      routerLink="/contact"
+      class="nav-cta"
+    >
+      Liên hệ
+      <span>↗</span>
+    </a>
+
+
+    <!-- MOBILE -->
+
+    <button
+      class="menu-button"
+      type="button"
+      (click)="toggleMenu()"
+      aria-label="Menu"
+    >
+
+      @if (menuOpen()) {
+        ✕
+      } @else {
+        ☰
+      }
+
+    </button>
+
+  </div>
+
+
+  <!-- MOBILE MENU -->
+
+  @if (menuOpen()) {
+
+    <div class="mobile-menu">
+
+      @for (link of links; track link.path) {
+
+        @if (link.children) {
+
+          <button
+            class="mobile-product-trigger"
+            type="button"
+            (click)="toggleProducts()"
+          >
+
+            <span>
+              {{ link.label }}
+            </span>
+
+            <span
+              [class.rotate]="productsOpen()"
+            >
+              ↓
+            </span>
+
+          </button>
+
+
+          @if (productsOpen()) {
+
+            <div class="mobile-products">
+
+              @for (
+                product of link.children;
+                track product.path
+              ) {
+
+                <a
+                  [routerLink]="product.path"
+                  (click)="closeMenu()"
+                >
+                  {{ product.label }}
+                </a>
+
+              }
+
+            </div>
+
+          }
+
+        } @else {
+
+          <a
+            [routerLink]="link.path"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+
+        }
+
+      }
+
+    </div>
+
+  }
+
+</nav>
