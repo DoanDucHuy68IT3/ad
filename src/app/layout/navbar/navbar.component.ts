@@ -110,7 +110,7 @@ export class NavbarComponent {
 
     {
       path: '/office',
-      label: 'Văn phòng'
+      label: 'Vị trí'
     }
 
   ];

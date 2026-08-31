@@ -1,1 +1,540 @@
-<p>ai-camera works!</p>
+<main class="product-page">
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="product-hero">
+
+    <div class="hero-container">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          AI CAMERA · EDGE AI
+        </span>
+
+        <h1>
+          Camera không chỉ
+          <span>nhìn thấy.</span>
+        </h1>
+
+        <p class="hero-description">
+          AI Camera kết hợp camera độ phân giải cao với
+          trí tuệ nhân tạo và Edge Computing để biến hình ảnh
+          thành dữ liệu có giá trị ngay trong thời gian thực.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#demo"
+            class="btn btn-primary"
+          >
+            Xem demo
+            <span>→</span>
+          </a>
+
+          <a
+            href="#specifications"
+            class="btn btn-secondary"
+          >
+            Xem thông số
+          </a>
+
+        </div>
+
+        <div class="stats">
+
+          @for (stat of stats; track stat.label) {
+
+            <div class="stat">
+
+              <strong>
+                {{ stat.value }}
+              </strong>
+
+              <span>
+                {{ stat.label }}
+              </span>
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="product-visual">
+
+        <div class="visual-glow"></div>
+
+        <div class="camera-card">
+
+          <img
+            src="/images/cameras/camera-01.webp"
+            alt="AI Camera"
+          >
+
+          <div class="camera-status">
+
+            <span class="status-dot"></span>
+
+            AI SYSTEM ONLINE
+
+          </div>
+
+          <div class="camera-info">
+
+            <strong>
+              AI Camera
+            </strong>
+
+            <span>
+              Edge Vision System
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       INTRODUCTION
+  ====================================================== -->
+
+  <section class="introduction">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          INTELLIGENT VISION
+        </span>
+
+        <h2>
+          Từ hình ảnh
+          <span>đến hành động.</span>
+        </h2>
+
+        <p>
+          Camera truyền thống chỉ ghi lại hình ảnh.
+          AI Camera có thể hiểu những gì đang xảy ra
+          và biến chúng thành dữ liệu để hệ thống hành động.
+        </p>
+
+      </div>
+
+
+      <div class="vision-flow">
+
+        <div class="flow-item">
+
+          <span>01</span>
+
+          <strong>
+            SEE
+          </strong>
+
+          <p>
+            Thu thập hình ảnh
+            từ môi trường thực tế.
+          </p>
+
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+
+          <span>02</span>
+
+          <strong>
+            UNDERSTAND
+          </strong>
+
+          <p>
+            AI phân tích và
+            nhận diện đối tượng.
+          </p>
+
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+
+          <span>03</span>
+
+          <strong>
+            ACT
+          </strong>
+
+          <p>
+            Gửi dữ liệu và
+            kích hoạt hành động.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FEATURES
+  ====================================================== -->
+
+  <section class="features">
+
+    <div class="section-container">
+
+      <div class="section-header">
+
+        <div>
+
+          <span class="eyebrow">
+            CORE FEATURES
+          </span>
+
+          <h2>
+            Một camera.
+            <span>Nhiều khả năng.</span>
+          </h2>
+
+        </div>
+
+        <p>
+          Được thiết kế để xử lý các bài toán
+          Computer Vision trong môi trường thực tế.
+        </p>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+        @for (feature of features; track feature.number) {
+
+          <article class="feature-card">
+
+            <span class="feature-number">
+              {{ feature.number }}
+            </span>
+
+            <div class="feature-icon">
+              ◉
+            </div>
+
+            <h3>
+              {{ feature.title }}
+            </h3>
+
+            <p>
+              {{ feature.description }}
+            </p>
+
+            <div class="feature-arrow">
+              →
+            </div>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       DEMO VIDEO
+  ====================================================== -->
+
+  <section
+    class="demo"
+    id="demo"
+  >
+
+    <div class="section-container">
+
+      <div class="demo-header">
+
+        <span class="eyebrow">
+          AI DEMO
+        </span>
+
+        <h2>
+          Xem AI
+          <span>hoạt động.</span>
+        </h2>
+
+        <p>
+          Quan sát cách hệ thống nhận diện,
+          tracking và phân tích hình ảnh theo thời gian thực.
+        </p>
+
+      </div>
+
+
+      <div class="demo-video">
+
+        <video
+          controls
+          preload="metadata"
+          poster="/images/hero/hero-poster.webp"
+        >
+
+          <source
+            src="/videos/ai-demo.mp4"
+            type="video/mp4"
+          >
+
+          Trình duyệt của bạn không hỗ trợ video.
+
+        </video>
+
+        <div class="video-label">
+          AI COMPUTER VISION · REAL TIME
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SPECIFICATIONS
+  ====================================================== -->
+
+  <section
+    class="specifications"
+    id="specifications"
+  >
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          SPECIFICATIONS
+        </span>
+
+        <h2>
+          Được xây dựng cho
+          <span>thời gian thực.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="spec-grid">
+
+        <div class="spec">
+
+          <span>
+            Camera
+          </span>
+
+          <strong>
+            4K Ultra HD
+          </strong>
+
+        </div>
+
+        <div class="spec">
+
+          <span>
+            Processing
+          </span>
+
+          <strong>
+            Edge AI
+          </strong>
+
+        </div>
+
+        <div class="spec">
+
+          <span>
+            AI Model
+          </span>
+
+          <strong>
+            YOLO
+          </strong>
+
+        </div>
+
+        <div class="spec">
+
+          <span>
+            Connectivity
+          </span>
+
+          <strong>
+            Wi-Fi / Ethernet
+          </strong>
+
+        </div>
+
+        <div class="spec">
+
+          <span>
+            Frame Rate
+          </span>
+
+          <strong>
+            Up to 30 FPS
+          </strong>
+
+        </div>
+
+        <div class="spec">
+
+          <span>
+            Operation
+          </span>
+
+          <strong>
+            24 / 7
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       APPLICATIONS
+  ====================================================== -->
+
+  <section class="applications">
+
+    <div class="section-container">
+
+      <div class="section-header">
+
+        <div>
+
+          <span class="eyebrow">
+            APPLICATIONS
+          </span>
+
+          <h2>
+            AI Camera cho
+            <span>mọi môi trường.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="application-list">
+
+        @for (application of applications; track application.title) {
+
+          <article class="application-card">
+
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            >
+
+            <div class="application-overlay">
+
+              <span>
+                0{{ $index + 1 }}
+              </span>
+
+              <h3>
+                {{ application.title }}
+              </h3>
+
+              <p>
+                {{ application.description }}
+              </p>
+
+            </div>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CTA
+  ====================================================== -->
+
+  <section class="product-cta">
+
+    <div class="cta-container">
+
+      <span class="eyebrow">
+        READY TO START?
+      </span>
+
+      <h2>
+        Biến camera của bạn
+        <span>thành một hệ thống thông minh.</span>
+      </h2>
+
+      <p>
+        Liên hệ với chúng tôi để được tư vấn
+        giải pháp AI Camera phù hợp với nhu cầu của bạn.
+      </p>
+
+      <div class="cta-actions">
+
+        <a
+          routerLink="/order"
+          class="btn btn-primary"
+        >
+          Đặt hàng
+          <span>→</span>
+        </a>
+
+        <a
+          routerLink="/solutions"
+          class="btn btn-secondary"
+        >
+          Xem giải pháp
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
