@@ -1,34 +1,133 @@
+
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero/poster.jpg">
-    <source src="assets/hero/camera-ai-loop.mp4" type="video/mp4" />
-  </video>
-  <div class="overlay"></div>
 
-  <div class="hero-content">
-    <span class="eyebrow">Camera AI thế hệ mới</span>
-    <h1>Nhìn thấy mọi thứ.<br />Thấu hiểu ngay lập tức.</h1>
-    <p class="lead">
-      Hệ thống camera tích hợp AI biên (Edge AI) trên ESP32, xử lý nhận diện, đếm người
-      và phát hiện bất thường ngay tại thiết bị — không cần chờ server.
-    </p>
+  <div class="hero-container">
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#ai-demo">Xem demo trực tiếp</a>
-      <a class="btn btn-ghost" href="#final-cta">Nhận tư vấn miễn phí</a>
+    <!-- LEFT: CONTENT -->
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        Camera AI thế hệ mới
+      </span>
+
+      <h1>
+        Nhìn thấy mọi thứ.
+        <br />
+        <span>Thấu hiểu ngay lập tức.</span>
+      </h1>
+
+      <p class="lead">
+        Hệ thống camera tích hợp AI biên (Edge AI) trên ESP32,
+        xử lý nhận diện, đếm người và phát hiện bất thường
+        ngay tại thiết bị.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="#ai-demo"
+        >
+          Xem demo trực tiếp
+          <span>→</span>
+        </a>
+
+        <a
+          class="btn btn-ghost"
+          href="#final-cta"
+        >
+          Nhận tư vấn miễn phí
+        </a>
+
+      </div>
+
+
+      <!-- STATS -->
+      <div class="hero-stats">
+
+        @for (s of stats; track s.label) {
+
+          <div class="stat">
+
+            <strong>
+              {{ s.value }}
+            </strong>
+
+            <span>
+              {{ s.label }}
+            </span>
+
+          </div>
+
+        }
+
+      </div>
+
     </div>
 
-    <div class="hero-stats">
-      @for (s of stats; track s.label) {
-        <div class="stat">
-          <strong>{{ s.value }}</strong>
-          <span>{{ s.label }}</span>
+
+    <!-- RIGHT: VIDEO -->
+    <div class="hero-media">
+
+      <div class="video-wrapper">
+
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          controls
+        >
+
+          <source
+            src="/videos/introduction.mp4"
+            type="video/mp4"
+          />
+
+          Trình duyệt của bạn không hỗ trợ video.
+
+        </video>
+
+
+        <!-- VIDEO UI -->
+        <div class="video-top">
+
+          <span class="live-dot"></span>
+
+          <span>
+            IoT Thông minh
+          </span>
+
         </div>
-      }
+
+
+        <div class="video-bottom">
+          <span class="video-title">
+            Camera AI thế hệ mới
+          </span>
+
+          <span class="video-subtitle">
+            Nhìn thấy mọi thứ. Thấu hiểu ngay lập tức.
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 
+
+  <!-- SCROLL -->
   <div class="scroll-hint">
+
     <span></span>
+
     Cuộn xuống để khám phá
+
   </div>
+
 </section>

@@ -11,7 +11,8 @@ export class ProjectService {
       location: 'TP. Hồ Chí Minh',
       category: 'Quán cà phê',
       description: 'Triển khai 40 camera AI tại 12 chi nhánh để đếm lượt khách theo giờ, tối ưu nhân sự phục vụ.',
-      image: 'assets/projects/cafe-highland.jpg',
+      image: 'videos/introduction.mp4',
+      video: '/videos/project-01.mp4',
       tags: ['Đếm người', 'Phân tích giờ cao điểm']
     },
     {
@@ -21,7 +22,8 @@ export class ProjectService {
       location: 'Hà Nội',
       category: 'Bán lẻ',
       description: 'Camera AI phân tích luồng di chuyển khách hàng, phát hiện kệ hàng trống theo thời gian thực.',
-      image: 'assets/projects/retail-mart.jpg',
+      image: 'videos/introduction.mp4',
+      video: '/videos/project-01.mp4',
       tags: ['Heatmap', 'Kệ hàng trống']
     },
     {
@@ -31,7 +33,8 @@ export class ProjectService {
       location: 'Bắc Ninh',
       category: 'Nhà máy',
       description: 'Giám sát khu vực nguy hiểm, cảnh báo khi công nhân không đội mũ bảo hộ hoặc vào vùng cấm.',
-      image: 'assets/projects/factory-quality.jpg',
+      image: 'videos/introduction.mp4',
+      video: '/videos/project-01.mp4',
       tags: ['An toàn lao động', 'Cảnh báo thời gian thực']
     },
     {
@@ -41,7 +44,8 @@ export class ProjectService {
       location: 'Đà Nẵng',
       category: 'Bãi đỗ xe',
       description: 'Nhận diện biển số tự động ra vào, thống kê chỗ trống theo thời gian thực trên bảng điều khiển.',
-      image: 'assets/projects/parking-smart.jpg',
+      image: 'videos/introduction.mp4',
+      video: '/videos/project-01.mp4',
       tags: ['Nhận diện biển số', 'Quản lý chỗ trống']
     }
   ];

@@ -1,15 +1,30 @@
 <section class="section page-header">
   <span class="eyebrow">Sản phẩm</span>
-  <h1>Toàn bộ dòng camera AI</h1>
-  <p>Từ camera biên siêu nhỏ gọn đến hệ thống trung tâm hiệu năng cao — chọn giải pháp phù hợp với quy mô của bạn.</p>
+
+  <h1>Toàn bộ dòng sản phẩm AI & IoT</h1>
+
+  <p>
+    Từ camera AI đến các giải pháp IoT thông minh —
+    chọn sản phẩm phù hợp với nhu cầu của bạn.
+  </p>
 </section>
 
+
 <section class="section products-grid-section">
+
   <div class="grid">
-    @for (cam of cameras; track cam.id) {
-      <app-product-card [camera]="cam" />
+
+    @for (product of products; track product.id) {
+
+      <app-product-card
+        [product]="product"
+      />
+
     }
+
   </div>
+
 </section>
+
 
 <app-final-cta />

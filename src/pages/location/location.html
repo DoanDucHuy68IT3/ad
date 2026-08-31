@@ -1,0 +1,98 @@
+<section class="location-page">
+
+  <div class="location-container">
+
+    <div class="location-content">
+
+      <span class="eyebrow">
+        VĂN PHÒNG
+      </span>
+
+      <h1>
+        Ghé thăm
+        <span>chúng tôi.</span>
+      </h1>
+
+      <p class="description">
+        Văn phòng là nơi chúng tôi nghiên cứu, phát triển
+        và xây dựng những sản phẩm AIoT phục vụ các bài toán
+        thực tế của doanh nghiệp.
+      </p>
+
+      <div class="office-info">
+
+        <div class="info-item">
+          <span class="icon">⌖</span>
+
+          <div>
+            <small>Địa chỉ</small>
+            <strong>{{ office.address }}</strong>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="icon">☎</span>
+
+          <div>
+            <small>Điện thoại</small>
+            <strong>{{ office.phone }}</strong>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="icon">✉</span>
+
+          <div>
+            <small>Email</small>
+            <strong>{{ office.email }}</strong>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="icon">◷</span>
+
+          <div>
+            <small>Giờ làm việc</small>
+            <strong>{{ office.workingTime }}</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <a
+        class="btn btn-primary"
+        href="https://www.google.com/maps/search/?api=1&query=Hanoi,Vietnam"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chỉ đường trên Google Maps →
+      </a>
+
+    </div>
+
+    <div class="map-wrapper">
+
+      <iframe
+        [src]="mapUrl"
+        title="Vị trí văn phòng"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <div class="map-card">
+
+        <span class="map-dot"></span>
+
+        <div>
+          <strong>{{ office.name }}</strong>
+          <small>{{ office.address }}</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

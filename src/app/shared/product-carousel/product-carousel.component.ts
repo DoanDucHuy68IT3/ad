@@ -1,4 +1,3 @@
-
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -9,13 +8,15 @@ import {
   inject
 } from '@angular/core';
 
-import { CameraService } from '../../core/services/camera.service';
+import { ProductService } from '../../core/services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product-carousel',
   standalone: true,
-  imports: [ProductCardComponent],
+  imports: [
+    ProductCardComponent
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './product-carousel.component.html',
   styleUrl: './product-carousel.component.scss'
@@ -23,117 +24,135 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 export class ProductCarouselComponent
   implements AfterViewInit, OnDestroy {
 
-  private readonly cameraService = inject(CameraService);
+  private readonly productService = inject(ProductService);
 
-  cameras = this.cameraService.getCameras();
+  products = this.productService.getProducts();
 
   @ViewChild('viewport')
-  viewport!: ElementRef<HTMLDivElement>;
-
-  currentIndex = 0;
+  viewport!: ElementRef<HTMLElement>;
 
   private timer?: ReturnType<typeof setInterval>;
 
-  private readonly visibleCards = 4;
-  private readonly gap = 24;
-  private readonly interval = 3000;
+  // Khoảng cách mỗi lần trượt
+  private readonly scrollAmount = 380;
+
+  // Tự động chạy mỗi 3 giây
+  private readonly intervalTime = 3000;
+
+
+  // =====================================================
+  // INIT
+  // =====================================================
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.startAutoSlide();
-    });
+    this.startAutoSlide();
   }
 
-  /**
-   * Số lần tối đa có thể trượt sang phải.
-   */
-  private get maxIndex(): number {
-    return Math.max(
-      0,
-      this.cameras.length - this.visibleCards
-    );
-  }
 
-  /**
-   * Bắt đầu tự động trượt.
-   */
+  // =====================================================
+  // AUTO SLIDE
+  // =====================================================
+
   startAutoSlide(): void {
-    this.pause();
+
+    this.stopAutoSlide();
 
     this.timer = setInterval(() => {
       this.scroll('right');
-    }, this.interval);
+    }, this.intervalTime);
+
   }
 
-  /**
-   * Điều khiển nút trái/phải.
-   */
-  scroll(direction: 'left' | 'right'): void {
-    if (this.cameras.length <= this.visibleCards) {
-      return;
-    }
 
-    if (direction === 'right') {
-      this.currentIndex++;
+  stopAutoSlide(): void {
 
-      if (this.currentIndex > this.maxIndex) {
-        this.currentIndex = 0;
-      }
-    } else {
-      this.currentIndex--;
-
-      if (this.currentIndex < 0) {
-        this.currentIndex = this.maxIndex;
-      }
-    }
-
-    this.updatePosition();
-  }
-
-  /**
-   * Cập nhật vị trí carousel.
-   */
-  private updatePosition(): void {
-    const viewport = this.viewport.nativeElement;
-
-    const card = viewport.querySelector(
-      'app-product-card'
-    ) as HTMLElement | null;
-
-    if (!card) {
-      return;
-    }
-
-    const cardWidth = card.offsetWidth;
-
-    const offset =
-      this.currentIndex * (cardWidth + this.gap);
-
-    viewport.scrollTo({
-      left: offset,
-      behavior: 'smooth'
-    });
-  }
-
-  /**
-   * Dừng auto slide.
-   */
-  pause(): void {
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = undefined;
     }
+
   }
 
-  /**
-   * Chạy lại auto slide.
-   */
+
+  // =====================================================
+  // HOVER
+  // =====================================================
+
+  pause(): void {
+    this.stopAutoSlide();
+  }
+
+
   resume(): void {
     this.startAutoSlide();
   }
 
-  ngOnDestroy(): void {
-    this.pause();
-  }
-}
 
+  // =====================================================
+  // SCROLL
+  // =====================================================
+
+  scroll(direction: 'left' | 'right'): void {
+
+    const element = this.viewport?.nativeElement;
+
+    if (!element) {
+      return;
+    }
+
+    const amount =
+      direction === 'right'
+        ? this.scrollAmount
+        : -this.scrollAmount;
+
+    const maxScroll =
+      element.scrollWidth - element.clientWidth;
+
+
+    // Nếu kéo sang phải và đã gần cuối
+    if (
+      direction === 'right' &&
+      element.scrollLeft >= maxScroll - 10
+    ) {
+
+      element.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+
+      return;
+    }
+
+
+    // Nếu kéo sang trái và đang ở đầu
+    if (
+      direction === 'left' &&
+      element.scrollLeft <= 10
+    ) {
+
+      element.scrollTo({
+        left: maxScroll,
+        behavior: 'smooth'
+      });
+
+      return;
+    }
+
+
+    element.scrollBy({
+      left: amount,
+      behavior: 'smooth'
+    });
+
+  }
+
+
+  // =====================================================
+  // DESTROY
+  // =====================================================
+
+  ngOnDestroy(): void {
+    this.stopAutoSlide();
+  }
+
+}

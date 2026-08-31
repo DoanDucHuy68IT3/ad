@@ -1,35 +1,48 @@
-```html
 <section
   class="section carousel-section"
   (mouseenter)="pause()"
   (mouseleave)="resume()"
 >
+
+  <!-- HEADER -->
   <div class="carousel-head">
 
-    <div>
+    <div class="carousel-title">
+
       <span class="eyebrow">
-        Dòng sản phẩm
+        DÒNG SẢN PHẨM
       </span>
 
       <h2>
-        Camera cho mọi bài toán giám sát
+        Giải pháp công nghệ
+        <span>AI & IoT</span>
       </h2>
+
+      <p>
+        Khám phá các thiết bị thông minh phục vụ
+        giám sát, tự động hóa và quản lý môi trường.
+      </p>
+
     </div>
 
+
+    <!-- CONTROLS -->
     <div class="carousel-controls">
 
       <button
         type="button"
+        class="carousel-btn"
         (click)="scroll('left')"
-        aria-label="Camera trước"
+        aria-label="Sản phẩm trước"
       >
         ←
       </button>
 
       <button
         type="button"
+        class="carousel-btn"
         (click)="scroll('right')"
-        aria-label="Camera tiếp theo"
+        aria-label="Sản phẩm tiếp theo"
       >
         →
       </button>
@@ -38,24 +51,25 @@
 
   </div>
 
+
+  <!-- VIEWPORT -->
   <div
-    class="carousel-viewport"
     #viewport
+    class="carousel-viewport"
   >
-    <div class="track">
 
-      @for (cam of cameras; track cam.id) {
+    <div class="carousel-track">
 
-        <div class="card-wrapper">
-          <app-product-card
-            [camera]="cam"
-          />
-        </div>
+      @for (product of products; track product.id) {
+
+        <app-product-card
+          [product]="product"
+        />
 
       }
 
     </div>
+
   </div>
 
 </section>
-```

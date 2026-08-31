@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component
+} from '@angular/core';
 
 @Component({
   selector: 'app-ai-introduction',
@@ -8,18 +11,30 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrl: './ai-introduction.component.scss'
 })
 export class AiIntroductionComponent {
+
   pillars = [
+
     {
-      title: 'Nhìn (See)',
-      text: 'Cảm biến hình ảnh độ nét cao kết hợp hồng ngoại thu thập dữ liệu liên tục, mọi điều kiện ánh sáng.'
+      number: '01',
+      title: 'Thu thập dữ liệu',
+      subtitle: 'Collect',
+      text: 'Kết nối camera, cảm biến và thiết bị IoT để thu thập dữ liệu môi trường, hình ảnh và trạng thái thiết bị theo thời gian thực.'
     },
+
     {
-      title: 'Hiểu (Understand)',
-      text: 'Mô hình YOLO chạy trên chip AI biên phân tích khung hình, nhận diện đối tượng theo thời gian thực.'
+      number: '02',
+      title: 'Biến dữ liệu thành thông tin',
+      subtitle: 'Intelligence',
+      text: 'AI và Edge Computing phân tích dữ liệu ngay tại thiết bị, phát hiện đối tượng, bất thường và các thay đổi quan trọng.'
     },
+
     {
-      title: 'Hành động (Act)',
-      text: 'Kết quả phân tích được đẩy tức thì tới dashboard, gửi cảnh báo hoặc kích hoạt tự động hoá.'
+      number: '03',
+      title: 'Tự động hóa quyết định',
+      subtitle: 'Automation',
+      text: 'Dữ liệu được truyền về nền tảng IoT để giám sát, cảnh báo và tự động điều khiển thiết bị theo những điều kiện được thiết lập.'
     }
+
   ];
+
 }

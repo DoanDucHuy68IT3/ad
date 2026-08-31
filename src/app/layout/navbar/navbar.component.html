@@ -1,270 +1,79 @@
-<nav
+<header
   class="navbar"
   [class.scrolled]="scrolled()"
 >
 
-  <div class="navbar-inner">
+  <!-- LOGO -->
 
-    <!-- LOGO -->
+  <a
+    class="logo"
+    routerLink="/"
+    (click)="closeMenu()"
+  >
 
-    <a
-      routerLink="/"
-      class="logo"
-      (click)="closeMenu()"
-    >
-      <img
-        src="/images/logo/logo.svg"
-        alt="Logo"
-      />
-    </a>
+    <span class="dot"></span>
 
+    <span>
+      AI<strong>Camera</strong>
+    </span>
 
-    <!-- DESKTOP MENU -->
-
-    <div class="desktop-menu">
-
-      @for (link of links; track link.path) {
-
-        @if (link.children) {
-
-          <div
-            class="nav-dropdown"
-            (mouseenter)="productsOpen.set(true)"
-            (mouseleave)="productsOpen.set(false)"
-          >
-
-            <button
-              class="nav-link dropdown-trigger"
-              type="button"
-            >
-              {{ link.label }}
-
-              <span
-                class="arrow"
-                [class.rotate]="productsOpen()"
-              >
-                ↓
-              </span>
-            </button>
+  </a>
 
 
-            <!-- DROPDOWN -->
+  <!-- NAVIGATION -->
 
-            @if (productsOpen()) {
+  <nav
+    class="links"
+    [class.open]="menuOpen()"
+  >
 
-              <div class="dropdown-menu">
+    @for (link of links; track link.path) {
 
-                <div class="dropdown-header">
+      <a
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+          exact: link.path === '/'
+        }"
+        (click)="closeMenu()"
+      >
 
-                  <span>
-                    PRODUCTS
-                  </span>
+        {{ link.label }}
 
-                  <p>
-                    AI & IoT solutions
-                  </p>
+      </a>
 
-                </div>
+    }
 
-
-                <div class="dropdown-grid">
-
-                  @for (
-                    product of link.children;
-                    track product.path
-                  ) {
-
-                    <a
-                      [routerLink]="product.path"
-                      routerLinkActive="active"
-                      class="product-item"
-                      (click)="closeMenu()"
-                    >
-
-                      <div class="product-icon">
-
-                        @switch (product.label) {
-
-                          @case ('AI Camera') {
-                            ◉
-                          }
-
-                          @case ('Healthcare IoT') {
-                            +
-                          }
-
-                          @case ('Agriculture IoT') {
-                            ◌
-                          }
-
-                          @case ('Construction IoT') {
-                            ⌂
-                          }
-
-                          @case ('Industrial IoT') {
-                            ⚙
-                          }
-
-                          @case ('Smart Home') {
-                            ⌂
-                          }
-
-                        }
-
-                      </div>
+  </nav>
 
 
-                      <div>
+  <!-- ACTIONS -->
 
-                        <strong>
-                          {{ product.label }}
-                        </strong>
-
-                        <span>
-                          {{ product.description }}
-                        </span>
-
-                      </div>
-
-                    </a>
-
-                  }
-
-                </div>
-
-
-                <a
-                  routerLink="/products"
-                  class="view-all"
-                  (click)="closeMenu()"
-                >
-                  Xem tất cả sản phẩm →
-                </a>
-
-              </div>
-
-            }
-
-          </div>
-
-        } @else {
-
-          <a
-            [routerLink]="link.path"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{
-              exact: link.path === '/'
-            }"
-            class="nav-link"
-            (click)="closeMenu()"
-          >
-            {{ link.label }}
-          </a>
-
-        }
-
-      }
-
-    </div>
-
-
-    <!-- CTA -->
+  <div class="actions">
 
     <a
-      routerLink="/contact"
-      class="nav-cta"
+      class="btn btn-primary order-btn"
+      routerLink="/order"
     >
-      Liên hệ
-      <span>↗</span>
+      Đặt hàng
+      <span>→</span>
     </a>
 
-
-    <!-- MOBILE -->
 
     <button
-      class="menu-button"
+      class="burger"
       type="button"
       (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
       aria-label="Menu"
     >
 
-      @if (menuOpen()) {
-        ✕
-      } @else {
-        ☰
-      }
+      <span></span>
+      <span></span>
+      <span></span>
 
     </button>
 
   </div>
 
-
-  <!-- MOBILE MENU -->
-
-  @if (menuOpen()) {
-
-    <div class="mobile-menu">
-
-      @for (link of links; track link.path) {
-
-        @if (link.children) {
-
-          <button
-            class="mobile-product-trigger"
-            type="button"
-            (click)="toggleProducts()"
-          >
-
-            <span>
-              {{ link.label }}
-            </span>
-
-            <span
-              [class.rotate]="productsOpen()"
-            >
-              ↓
-            </span>
-
-          </button>
-
-
-          @if (productsOpen()) {
-
-            <div class="mobile-products">
-
-              @for (
-                product of link.children;
-                track product.path
-              ) {
-
-                <a
-                  [routerLink]="product.path"
-                  (click)="closeMenu()"
-                >
-                  {{ product.label }}
-                </a>
-
-              }
-
-            </div>
-
-          }
-
-        } @else {
-
-          <a
-            [routerLink]="link.path"
-            (click)="closeMenu()"
-          >
-            {{ link.label }}
-          </a>
-
-        }
-
-      }
-
-    </div>
-
-  }
-
-</nav>
+</header>
