@@ -1,60 +1,268 @@
 .demo-section {
-  background: var(--bg-0);
-  text-align: left;
-
-  h2 { font-size: clamp(26px, 3.2vw, 38px); margin: 12px 0 16px; }
-  .lead { max-width: 560px; margin-bottom: 40px; }
-}
-
-.demo-modes {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-
-  button {
-    padding: 10px 20px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-1);
-    font-size: 13px;
-    cursor: pointer;
-    transition: all .2s ease;
-
-    &.active { background: var(--cyan); color: #06090f; border-color: var(--cyan); font-weight: 600; }
-    &:hover:not(.active) { border-color: var(--cyan-dim); color: var(--text-0); }
-  }
-}
-
-.demo-frame {
-  position: relative;
   width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16/9;
-  border-radius: var(--radius);
+  padding: 80px 20px;
+
+  background: var(--bg-0);
+  box-sizing: border-box;
+}
+
+.demo-header {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.demo-section .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: var(--cyan);
+}
+
+.demo-section h2 {
+  margin: 0 0 16px;
+
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: var(--text-0);
+}
+
+.demo-section .lead {
+  max-width: 650px;
+  margin: 0 auto;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: var(--text-1);
+}
+
+
+/* ==============================
+   CAROUSEL
+================================ */
+
+.demo-carousel {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 9;
+
   overflow: hidden;
+
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+
   background: var(--bg-2);
 
-  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.18);
+}
 
-  .box {
-    position: absolute;
-    border: 2px solid var(--cyan);
-    border-radius: 6px;
-    box-shadow: 0 0 16px rgba(53,224,224,.4);
 
-    .label {
-      position: absolute;
-      top: -26px; left: -2px;
-      background: var(--cyan);
-      color: #06090f;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
-    }
+/* ==============================
+   SLIDES
+================================ */
+
+.demo-track {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.demo-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transform: translateX(40px) scale(1.02);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  pointer-events: none;
+}
+
+.demo-slide.active {
+  opacity: 1;
+
+  transform: translateX(0) scale(1);
+
+  pointer-events: auto;
+}
+
+.demo-slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ==============================
+   BUTTON
+================================ */
+
+.carousel-btn {
+  position: absolute;
+
+  top: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+
+/* ==============================
+   DOTS
+================================ */
+
+.carousel-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 8px;
+
+  padding: 7px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(8px);
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.carousel-dots button.active {
+  width: 24px;
+
+  border-radius: 999px;
+
+  background: var(--cyan);
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .demo-section {
+    padding: 60px 16px;
+  }
+
+  .demo-section h2 {
+    font-size: 30px;
+  }
+
+  .demo-section .lead {
+    font-size: 15px;
+  }
+
+  .demo-carousel {
+    border-radius: 14px;
+  }
+
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    bottom: 12px;
   }
 }

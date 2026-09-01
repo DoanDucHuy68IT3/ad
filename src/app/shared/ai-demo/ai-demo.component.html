@@ -1,24 +1,83 @@
 <section id="ai-demo" class="section demo-section">
-  <span class="eyebrow">Trải nghiệm trực tiếp</span>
-  <h2>AI phát hiện theo thời gian thực</h2>
-  <p class="lead">Chọn chế độ để xem cách mô hình AI khoanh vùng và gắn nhãn đối tượng ngay trên khung hình.</p>
 
-  <div class="demo-modes">
-    @for (m of modes; track m; let i = $index) {
-      <button [class.active]="activeMode() === i" (click)="setMode(i)">{{ m }}</button>
-    }
+  <!-- HEADER -->
+  <div class="demo-header">
+
+    <span class="eyebrow">Ứng dụng thực tế</span>
+
+    <h2>AI & IoT trong thực tế</h2>
+
+    <p class="lead">
+      Khám phá các giải pháp AI và IoT được ứng dụng
+      trong nhiều lĩnh vực khác nhau.
+    </p>
+
   </div>
 
-  <div class="demo-frame">
-    <img src="assets/demo/frame-{{ activeMode() + 1 }}.jpg" alt="Khung hình demo AI" />
-    @for (box of boxes; track box.label) {
-      <div class="box"
-           [style.left.%]="box.x"
-           [style.top.%]="box.y"
-           [style.width.%]="box.w"
-           [style.height.%]="box.h">
-        <span class="label">{{ box.label }} · {{ box.confidence }}%</span>
-      </div>
-    }
+
+  <!-- CAROUSEL -->
+  <div class="demo-carousel">
+
+    <div class="demo-track">
+
+      @for (image of images; track image; let i = $index) {
+
+        <div
+          class="demo-slide"
+          [class.active]="activeIndex() === i"
+        >
+
+          <img
+            [src]="image"
+            alt="Ứng dụng AI và IoT"
+            loading="lazy"
+          />
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- NÚT TRƯỚC -->
+    <button
+      class="carousel-btn prev"
+      type="button"
+      (click)="prev()"
+      aria-label="Ảnh trước"
+    >
+      ←
+    </button>
+
+
+    <!-- NÚT SAU -->
+    <button
+      class="carousel-btn next"
+      type="button"
+      (click)="next()"
+      aria-label="Ảnh tiếp theo"
+    >
+      →
+    </button>
+
+
+    <!-- DOT -->
+    <div class="carousel-dots">
+
+      @for (image of images; track image; let i = $index) {
+
+        <button
+          type="button"
+          [class.active]="activeIndex() === i"
+          (click)="goTo(i)"
+          [attr.aria-label]="'Ảnh ' + (i + 1)"
+        ></button>
+
+      }
+
+    </div>
+
   </div>
+
 </section>
