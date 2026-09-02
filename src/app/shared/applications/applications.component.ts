@@ -11,26 +11,66 @@ import { ApplicationCardComponent, ApplicationItem } from '../application-card/a
 })
 export class ApplicationsComponent {
   items: ApplicationItem[] = [
-    {
-      icon: '☕',
-      title: 'Quán cà phê',
-      description: 'Đếm khách theo khung giờ, đo thời gian chờ, tối ưu ca làm việc của nhân viên.',
-      metrics: ['Giảm 30% thời gian chờ', 'Tối ưu lịch ca 20%'],
-      image: 'assets/applications/coffee.jpg'
-    },
-    {
-      icon: '🛍️',
-      title: 'Bán lẻ',
-      description: 'Phân tích luồng khách, khu vực hot, phát hiện kệ hàng trống để bổ sung kịp thời.',
-      metrics: ['Tăng 15% doanh thu/khách', 'Cảnh báo kệ trống tức thì'],
-      image: 'assets/applications/retail.jpg'
-    },
-    {
-      icon: '🏭',
-      title: 'Nhà máy',
-      description: 'Giám sát an toàn lao động, phát hiện vi phạm đồ bảo hộ và khu vực nguy hiểm.',
-      metrics: ['Giảm 40% sự cố an toàn', 'Cảnh báo tức thì < 1s'],
-      image: 'assets/applications/factory.jpg'
-    }
-  ];
+
+  {
+    icon: '☕',
+    title: 'Quán cà phê & F&B',
+    description: 'Ứng dụng AI Camera và IoT để phân tích lượng khách, thời gian chờ và công suất phục vụ, giúp tối ưu nhân sự và nâng cao trải nghiệm khách hàng.',
+    metrics: [
+      'Giảm thời gian chờ',
+      'Tối ưu lịch làm việc',
+      'Phân tích lượng khách theo giờ'
+    ],
+    image: 'assets/applications/coffee.jpg'
+  },
+
+  {
+    icon: '🛍️',
+    title: 'Bán lẻ & Siêu thị',
+    description: 'Theo dõi hành vi và luồng di chuyển của khách hàng, phân tích khu vực có lượng truy cập cao và tự động phát hiện tình trạng kệ hàng để tối ưu vận hành.',
+    metrics: [
+      'Phân tích luồng khách hàng',
+      'Phát hiện kệ hàng trống',
+      'Tối ưu bố trí cửa hàng'
+    ],
+    image: 'assets/applications/retail.jpg'
+  },
+
+  {
+    icon: '🏭',
+    title: 'Nhà máy & Sản xuất',
+    description: 'Kết hợp AI Vision và IoT để giám sát dây chuyền, phát hiện vi phạm an toàn, kiểm tra chất lượng và cảnh báo sự cố theo thời gian thực.',
+    metrics: [
+      'Giám sát an toàn 24/7',
+      'Phát hiện lỗi tự động',
+      'Cảnh báo sự cố tức thì'
+    ],
+    image: 'assets/applications/factory.jpg'
+  },
+
+  {
+    icon: '🌾',
+    title: 'Nông nghiệp thông minh',
+    description: 'Giám sát môi trường và tình trạng cây trồng bằng cảm biến IoT kết hợp AI, giúp tự động hóa tưới tiêu và đưa ra quyết định dựa trên dữ liệu thực tế.',
+    metrics: [
+      'Tự động hóa tưới tiêu',
+      'Theo dõi môi trường',
+      'Tiết kiệm nước & chi phí'
+    ],
+    image: 'assets/applications/agriculture.jpg'
+  },
+
+  {
+    icon: '🏥',
+    title: 'Y tế & Chăm sóc sức khỏe',
+    description: 'Ứng dụng AI Camera và hệ thống IoT để giám sát không gian, hỗ trợ phát hiện tình huống bất thường và quản lý môi trường trong cơ sở y tế.',
+    metrics: [
+      'Giám sát liên tục',
+      'Phát hiện bất thường', 
+      'Quản lý môi trường thông minh'
+    ],
+    image: 'assets/applications/healthcare.jpg'
+  }
+
+];
 }

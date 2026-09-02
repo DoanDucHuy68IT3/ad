@@ -1,53 +1,59 @@
-.architecture-section {
-  background: var(--bg-0);
-
-  h2 { font-size: clamp(26px, 3.2vw, 38px); max-width: 620px; margin: 12px 0 56px; }
-}
-
-.pipeline {
+/* Thiết lập chung cho toàn bộ section */
+.architecture.section {
   display: flex;
-  align-items: center;
-  overflow-x: auto;
-  gap: 0;
-  padding-bottom: 12px;
-
-  @media (max-width: 860px) { flex-direction: column; align-items: stretch; }
+  flex-direction: column;
+  align-items: center;       /* Căn giữa tất cả các thành phần con theo chiều ngang */
+  text-align: center;        /* Căn giữa toàn bộ văn bản */
+  padding: 60px 20px;        /* Tạo khoảng cách trên dưới và trái phải cho section */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.node { display: flex; align-items: center; flex: 1; min-width: 220px; }
-
-.node-card {
-  flex: 1;
-  padding: 24px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-
-  .index {
-    display: inline-flex;
-    width: 32px; height: 32px;
-    align-items: center; justify-content: center;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--cyan), var(--violet));
-    color: #06090f;
-    font-weight: 700;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-
-  h3 { font-size: 16px; margin-bottom: 8px; }
-  p { font-size: 13px; }
+/* Tùy chỉnh phần tiêu đề (.section-header) */
+.architecture.section .section-header {
+  max-width: 800px;          /* Giới hạn chiều rộng để dòng chữ không bị quá dài, dễ đọc */
+  margin-bottom: 40px;       /* Tạo khoảng cách giữa chữ và hình ảnh bên dưới */
 }
 
-.connector {
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--cyan-dim), transparent);
-  flex-shrink: 0;
+/* Tùy chỉnh phần nhãn nhỏ (eyebrow) */
+.architecture.section .eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0066cc;            /* Bạn có thể đổi mã màu này theo chủ đề website của bạn */
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
 
-  @media (max-width: 860px) {
-    width: 2px;
-    height: 32px;
-    margin-left: 16px;
-  }
+/* Tùy chỉnh tiêu đề chính (h2) */
+.architecture.section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Tùy chỉnh đoạn mô tả (p) */
+.architecture.section .section-header p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tùy chỉnh phần chứa hình ảnh (.architecture-image) */
+.architecture.section .architecture-image {
+  width: 100%;
+  max-width: 1000px;         /* Giới hạn kích thước tối đa của khung chứa ảnh */
+}
+
+/* Tùy chỉnh thẻ hình ảnh (img) */
+.architecture.section .architecture-image img {
+  display: block;
+  width: 100%;               /* Ảnh tự động co giãn theo màn hình */
+  height: auto;
+  border-radius: 12px;       /* Bo tròn nhẹ góc ảnh (có thể xóa nếu không thích) */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Tạo hiệu ứng nổi nhẹ cho ảnh */
 }

@@ -34,7 +34,9 @@ export class ProductService {
         'Edge AI'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/ai-camera'
     },
 
 
@@ -60,7 +62,9 @@ export class ProductService {
         'Real-time Monitoring'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/healthcare'
     },
 
 
@@ -86,7 +90,9 @@ export class ProductService {
         'Light Monitoring'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/agriculture'
     },
 
 
@@ -112,7 +118,9 @@ export class ProductService {
         'Environment Monitoring'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/construction'
     },
 
 
@@ -129,7 +137,7 @@ export class ProductService {
       description:
         'Gateway kết nối máy móc và thiết bị công nghiệp với nền tảng IoT.',
 
-      image: '/images/product/cameras/camera-01.jpeg',
+      image: '/images/product/healthcare/1-2.avif',
 
       features: [
         'MQTT',
@@ -138,7 +146,9 @@ export class ProductService {
         'OPC UA'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/industrial'
     },
 
 
@@ -164,7 +174,9 @@ export class ProductService {
         'Device Management'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/smart-home'
     },
 
 
@@ -190,7 +202,9 @@ export class ProductService {
         'Humidity'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/environment'
     },
 
 
@@ -216,7 +230,9 @@ export class ProductService {
         'Energy Optimization'
       ],
 
-      price: 'Liên hệ báo giá'
+      price: 'Liên hệ báo giá',
+
+      link: '/products/energy'
     }
 
   ];
@@ -235,14 +251,21 @@ export class ProductService {
   // GET PRODUCT BY ID
   // =====================================================
 
-  getProductById(
-    id: string
-  ): Product | undefined {
-
+  getProductById(id: string): Product | undefined {
     return this.products.find(
       product => product.id === id
     );
+  }
 
+
+  // =====================================================
+  // GET PRODUCT BY LINK
+  // =====================================================
+
+  getProductByLink(link: string): Product | undefined {
+    return this.products.find(
+      product => product.link === link
+    );
   }
 
 
@@ -250,14 +273,10 @@ export class ProductService {
   // GET PRODUCTS BY FIELD
   // =====================================================
 
-  getProductsByField(
-    field: ProductField
-  ): Product[] {
-
+  getProductsByField(field: ProductField): Product[] {
     return this.products.filter(
       product => product.field === field
     );
-
   }
 
 
@@ -266,9 +285,7 @@ export class ProductService {
   // =====================================================
 
   getCameras(): Product[] {
-
     return this.getProductsByField('camera');
-
   }
 
 
@@ -277,9 +294,7 @@ export class ProductService {
   // =====================================================
 
   getHealthcare(): Product[] {
-
     return this.getProductsByField('healthcare');
-
   }
 
 
@@ -288,9 +303,7 @@ export class ProductService {
   // =====================================================
 
   getAgriculture(): Product[] {
-
     return this.getProductsByField('agriculture');
-
   }
 
 
@@ -299,9 +312,7 @@ export class ProductService {
   // =====================================================
 
   getConstruction(): Product[] {
-
     return this.getProductsByField('construction');
-
   }
 
 
@@ -310,9 +321,7 @@ export class ProductService {
   // =====================================================
 
   getIndustrial(): Product[] {
-
     return this.getProductsByField('industrial');
-
   }
 
 
@@ -321,9 +330,7 @@ export class ProductService {
   // =====================================================
 
   getSmartHome(): Product[] {
-
     return this.getProductsByField('smart-home');
-
   }
 
 
@@ -332,9 +339,7 @@ export class ProductService {
   // =====================================================
 
   getEnvironment(): Product[] {
-
     return this.getProductsByField('environment');
-
   }
 
 
@@ -343,9 +348,7 @@ export class ProductService {
   // =====================================================
 
   getSmartEnergy(): Product[] {
-
     return this.getProductsByField('energy');
-
   }
 
 }

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Location } from '../pages/location/location';
 import { AboutUs} from '../pages/about/about-us/about-us';
+import {Transport} from '../pages/products/transport/transport'
 
 export const routes: Routes = [
 
@@ -95,6 +96,10 @@ export const routes: Routes = [
   }, 
   {
     path: 'office', 
+    component: Location
+  }, 
+  {
+    path: 'transport', 
     component: Location
   }, 
   

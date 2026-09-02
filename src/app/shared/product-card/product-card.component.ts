@@ -3,7 +3,7 @@ import {
   Component,
   input
 } from '@angular/core';
-
+import { RouterLink } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 import { Product } from '../../core/models/product.model';
 
@@ -11,7 +11,8 @@ import { Product } from '../../core/models/product.model';
   selector: 'app-product-card',
   standalone: true,
   imports: [
-    DecimalPipe
+    DecimalPipe, 
+    RouterLink 
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './product-card.component.html',

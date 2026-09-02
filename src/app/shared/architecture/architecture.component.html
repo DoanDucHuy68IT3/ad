@@ -1,19 +1,15 @@
-<section class="section architecture-section">
-  <span class="eyebrow">Kiến trúc hệ thống</span>
-  <h2>Từ ống kính camera đến bảng điều khiển của bạn</h2>
-
-  <div class="pipeline">
-    @for (s of steps; track s.title; let i = $index; let last = $last) {
-      <div class="node">
-        <div class="node-card">
-          <span class="index">{{ i + 1 }}</span>
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.desc }}</p>
-        </div>
-      </div>
-      @if (!last) {
-        <div class="connector"></div>
-      }
-    }
+<section class="section page-header">
+  <span class="eyebrow">Giải pháp</span>
+  <h1>Giải pháp AI theo từng ngành nghề</h1>
+  <p>Mỗi ngành có bài toán riêng — chúng tôi tuỳ chỉnh mô hình AI và quy trình triển khai phù hợp với thực tế vận hành của bạn.</p>
+</section>
+<section class="architecture section">
+  <div class="architecture-image">
+    <img
+      src="/images/solutions/model.png"
+      alt="Mô hình hệ thống AI và IoT"
+      loading="lazy"
+    />
   </div>
+
 </section>
