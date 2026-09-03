@@ -1,1 +1,194 @@
-<p>construction works!</p>
+<main class="product-page">
+
+  <!-- HERO -->
+  <section class="product-hero">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="eyebrow">CONSTRUCTION IOT · AN TOÀN CÔNG TRƯỜNG</span>
+
+        <h1>
+          Giám sát an toàn công trường
+          <span>bằng AI thời gian thực.</span>
+        </h1>
+
+        <p class="hero-description">
+          Giải pháp AI Camera và cảm biến IoT giúp loại bỏ rủi ro tai nạn lao động,
+          tự động nhận diện trang bị bảo hộ (PPE), cảnh báo khu vực cẩu tải và kiểm soát môi trường thi công 24/7.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/order" class="btn btn-primary">
+            Yêu cầu báo giá
+            <span>→</span>
+          </a>
+          <a href="#specifications" class="btn btn-secondary">
+            Thông số kỹ thuật
+          </a>
+        </div>
+
+        <div class="stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="product-visual">
+        <div class="visual-glow"></div>
+        <div class="camera-card">
+          <img
+            src="/images/product/construction/11.jpg"
+            alt="Giám sát an toàn công trường"
+          />
+          <div class="camera-status">
+            <span class="status-dot"></span>
+            SAFETY AI ACTIVE
+          </div>
+          <div class="camera-info">
+            <strong>Smart Site Monitor</strong>
+            <span>Safety & PPE Vision System</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION FLOW -->
+  <section class="introduction">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">SAFETY FIRST</span>
+        <h2>Ngăn ngừa tai nạn <span>trước khi chúng xảy ra.</span></h2>
+        <p>
+          Mô hình Edge AI phân tích luồng video với tốc độ 30 khung hình/giây ngay tại công trường,
+          kích hoạt còi hú và cảnh báo điện thoại chỉ trong chưa đầy 0.2 giây.
+        </p>
+      </div>
+
+      <div class="vision-flow">
+        <div class="flow-item">
+          <span>01</span>
+          <strong>DETECT</strong>
+          <p>Phát hiện con người, phương tiện và trang bị bảo hộ qua camera.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>02</span>
+          <strong>EVALUATE</strong>
+          <p>Đánh giá nguy cơ vi phạm khoảng cách an toàn và thiếu PPE.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>03</span>
+          <strong>ALERT</strong>
+          <p>Hú còi cảnh báo tại chỗ và gửi thông báo khẩn tới cán bộ an toàn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">TÍNH NĂNG VƯỢT TRỘI</span>
+          <h2>Bảo vệ toàn diện <span>người lao động & tài sản.</span></h2>
+        </div>
+        <p>Giúp chủ đầu tư và nhà thầu tuân thủ nghiêm ngặt tiêu chuẩn an toàn lao động quốc gia.</p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.number) {
+          <article class="feature-card">
+            <span class="feature-number">{{ feature.number }}</span>
+            <div class="feature-icon">◉</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="specifications" id="specifications">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">THÔNG SỐ PHẦN CỨNG</span>
+        <h2>Chuẩn công nghiệp chịu va đập <span>và bụi bặm công trường.</span></h2>
+      </div>
+
+      <div class="spec-grid">
+        @for (spec of specs; track spec.label) {
+          <div class="spec">
+            <span>{{ spec.label }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">LĨNH VỰC ÁP DỤNG</span>
+          <h2>Triển khai linh hoạt <span>trên mọi quy mô công trình.</span></h2>
+        </div>
+      </div>
+
+      <div class="application-list">
+        @for (application of applications; track application.title) {
+          <article class="application-card">
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            />
+            <div class="application-overlay">
+              <span>0{{ $index + 1 }}</span>
+              <h3>{{ application.title }}</h3>
+              <p>{{ application.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="product-cta">
+    <div class="cta-container">
+      <span class="eyebrow">BẢO VỆ CÔNG TRÌNH CỦA BẠN</span>
+      <h2>Nâng cao chỉ số an toàn <span>cho dự án thi công</span></h2>
+      <p>
+        Hãy để AI Camera bảo vệ an toàn cho hàng nghìn công nhân của bạn mỗi ngày.
+        Đăng ký tư vấn để nhận phương án bố trí camera tối ưu cho mặt bằng công trường.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/order" class="btn btn-primary">
+          Đặt lịch khảo sát
+          <span>→</span>
+        </a>
+        <a routerLink="/solutions" class="btn btn-secondary">
+          Xem giải pháp khác
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>

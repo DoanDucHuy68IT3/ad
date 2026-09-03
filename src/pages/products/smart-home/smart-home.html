@@ -1,1 +1,194 @@
-<p>smart-home works!</p>
+<main class="product-page">
+
+  <!-- HERO -->
+  <section class="product-hero">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="eyebrow">SMART HOME · NHÀ THÔNG MINH</span>
+
+        <h1>
+          Ngôi nhà thấu hiểu
+          <span>và bảo vệ gia đình bạn.</span>
+        </h1>
+
+        <p class="hero-description">
+          Hệ sinh thái Smart Home kết hợp Hub điều khiển cục bộ, cảm biến hiện diện thế hệ mới và Camera AI bảo mật.
+          Tất cả hoạt động mượt mà, riêng tư và không lo gián đoạn ngay cả khi mất mạng.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/order" class="btn btn-primary">
+            Đặt mua thiết bị
+            <span>→</span>
+          </a>
+          <a href="#specifications" class="btn btn-secondary">
+            Xem thông số
+          </a>
+        </div>
+
+        <div class="stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="product-visual">
+        <div class="visual-glow"></div>
+        <div class="camera-card">
+          <img
+            src="/images/product/cameras/camera-01.jpeg"
+            alt="Smart Home Hub và Camera AI"
+          />
+          <div class="camera-status">
+            <span class="status-dot"></span>
+            LOCAL HUB SECURE
+          </div>
+          <div class="camera-info">
+            <strong>Smart Home Hub</strong>
+            <span>Privacy-first Edge Automation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION FLOW -->
+  <section class="introduction">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">SEAMLESS LIVING</span>
+        <h2>Tiện nghi tự nhiên <span>không cần chạm.</span></h2>
+        <p>
+          Hệ thống ghi nhận thói quen sinh hoạt và phát hiện hiện diện chính xác bằng sóng radar mmWave,
+          tự động điều phối ánh sáng, điều hòa và an ninh một cách tinh tế.
+        </p>
+      </div>
+
+      <div class="vision-flow">
+        <div class="flow-item">
+          <span>01</span>
+          <strong>RECOGNIZE</strong>
+          <p>Nhận diện người bước vào phòng qua cảm biến mmWave và khuôn mặt.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>02</span>
+          <strong>ADAPT</strong>
+          <p>Kích hoạt kịch bản ánh sáng và nhiệt độ phòng yêu thích theo thời điểm.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>03</span>
+          <strong>PROTECT</strong>
+          <p>Khóa cửa tự động và bật chế độ an ninh đa lớp khi cả nhà đi vắng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">TÍNH NĂNG NỔI BẬT</span>
+          <h2>Công nghệ thông minh <span>phục vụ cuộc sống.</span></h2>
+        </div>
+        <p>Ưu tiên hàng đầu về bảo mật quyền riêng tư: dữ liệu camera của bạn được xử lý tại chỗ.</p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.number) {
+          <article class="feature-card">
+            <span class="feature-number">{{ feature.number }}</span>
+            <div class="feature-icon">◉</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="specifications" id="specifications">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">THÔNG SỐ PHẦN CỨNG</span>
+        <h2>Khả năng tương thích <span>và kết nối mở rộng.</span></h2>
+      </div>
+
+      <div class="spec-grid">
+        @for (spec of specs; track spec.label) {
+          <div class="spec">
+            <span>{{ spec.label }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">KHÔNG GIAN ỨNG DỤNG</span>
+          <h2>Phù hợp cho mọi <span>mô hình không gian sống.</span></h2>
+        </div>
+      </div>
+
+      <div class="application-list">
+        @for (application of applications; track application.title) {
+          <article class="application-card">
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            />
+            <div class="application-overlay">
+              <span>0{{ $index + 1 }}</span>
+              <h3>{{ application.title }}</h3>
+              <p>{{ application.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="product-cta">
+    <div class="cta-container">
+      <span class="eyebrow">TRẢI NGHIỆM NHÀ THÔNG MINH</span>
+      <h2>Sẵn sàng nâng tầm <span>không gian sống của bạn?</span></h2>
+      <p>
+        Hãy để chúng tôi tư vấn gói thiết bị phù hợp nhất cho căn hộ hoặc công trình của bạn.
+        Lắp đặt trọn gói trong ngày, hướng dẫn sử dụng tận nơi.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/order" class="btn btn-primary">
+          Đăng ký lắp đặt
+          <span>→</span>
+        </a>
+        <a routerLink="/solutions" class="btn btn-secondary">
+          Xem giải pháp khác
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>

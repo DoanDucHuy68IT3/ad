@@ -1,0 +1,229 @@
+<main class="order-page">
+
+  <section class="order-hero section">
+    <div class="order-container">
+
+      <!-- HEADING -->
+      <div class="order-heading">
+        <span class="eyebrow">ĐẶT HÀNG & BÁO GIÁ</span>
+        <h1>Khởi tạo giải pháp <span>AIoT của bạn</span></h1>
+        <p>
+          Điền thông tin yêu cầu của bạn, đội ngũ chuyên gia của chúng tôi sẽ liên hệ tư vấn
+          chi tiết phương án kỹ thuật và gửi báo giá trong vòng 24 giờ.
+        </p>
+      </div>
+
+      <div class="order-layout">
+
+        <!-- LEFT: FORM -->
+        <div class="order-form-container">
+
+          @if (!submitted()) {
+
+            <form class="order-form" (submit)="onSubmit($event)">
+
+              <!-- CHỌN SẢN PHẨM -->
+              <div class="form-group">
+                <label class="form-label">Sản phẩm hoặc giải pháp quan tâm *</label>
+                <div class="product-selector">
+                  @for (opt of productOptions; track opt.id) {
+                    <button
+                      type="button"
+                      class="product-opt-btn"
+                      [class.active]="selectedProduct() === opt.id"
+                      (click)="selectProduct(opt.id)"
+                    >
+                      <span class="radio-dot"></span>
+                      <span class="opt-name">{{ opt.name }}</span>
+                    </button>
+                  }
+                </div>
+              </div>
+
+              <!-- SỐ LƯỢNG -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="quantity" class="form-label">Số lượng dự kiến</label>
+                  <div class="qty-control">
+                    <button type="button" (click)="setQuantity(quantity() - 1)">-</button>
+                    <input
+                      id="quantity"
+                      type="number"
+                      min="1"
+                      [value]="quantity()"
+                      (input)="setQuantity(+$any($event.target).value || 1)"
+                    />
+                    <button type="button" (click)="setQuantity(quantity() + 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="fullName" class="form-label">Họ và tên người liên hệ *</label>
+                  <input
+                    id="fullName"
+                    type="text"
+                    required
+                    placeholder="Ví dụ: Nguyễn Văn An"
+                    [value]="fullName()"
+                    (input)="fullName.set($any($event.target).value)"
+                  />
+                </div>
+              </div>
+
+              <!-- LIÊN HỆ -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Số điện thoại *</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    required
+                    placeholder="09xx xxx xxx"
+                    [value]="phone()"
+                    (input)="phone.set($any($event.target).value)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Địa chỉ Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="email@doanhnghiep.vn"
+                    [value]="email()"
+                    (input)="email.set($any($event.target).value)"
+                  />
+                </div>
+              </div>
+
+              <!-- DOANH NGHIỆP & ĐỊA CHỈ -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="company" class="form-label">Tên cơ quan / Doanh nghiệp</label>
+                  <input
+                    id="company"
+                    type="text"
+                    placeholder="Công ty ABC..."
+                    [value]="company()"
+                    (input)="company.set($any($event.target).value)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="address" class="form-label">Địa chỉ lắp đặt / Khu vực</label>
+                  <input
+                    id="address"
+                    type="text"
+                    placeholder="Quận/Huyện, Tỉnh/TP..."
+                    [value]="address()"
+                    (input)="address.set($any($event.target).value)"
+                  />
+                </div>
+              </div>
+
+              <!-- GHI CHÚ -->
+              <div class="form-group">
+                <label for="notes" class="form-label">Mô tả thêm về yêu cầu / bài toán của bạn</label>
+                <textarea
+                  id="notes"
+                  rows="4"
+                  placeholder="Ví dụ: Tôi muốn lắp đặt 4 camera AI để đếm lượng khách ra vào quán và theo dõi nhân viên..."
+                  [value]="notes()"
+                  (input)="notes.set($any($event.target).value)"
+                ></textarea>
+              </div>
+
+              @if (errorMessage()) {
+                <div class="alert-error">
+                  {{ errorMessage() }}
+                </div>
+              }
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary submit-btn">
+                  Gửi yêu cầu báo giá & đặt hàng →
+                </button>
+              </div>
+
+            </form>
+
+          } @else {
+
+            <!-- SUCCESS STATE -->
+            <div class="order-success">
+              <div class="success-icon">✓</div>
+              <h2>Yêu cầu đã được gửi thành công!</h2>
+              <p>
+                Cảm ơn bạn <strong>{{ fullName() }}</strong>! Chúng tôi đã ghi nhận thông tin đặt hàng cho
+                sản phẩm và sẽ liên hệ qua số <strong>{{ phone() }}</strong> trong thời gian sớm nhất.
+              </p>
+
+              <div class="success-actions">
+                <button type="button" class="btn btn-ghost" (click)="resetForm()">
+                  Gửi yêu cầu khác
+                </button>
+                <a routerLink="/" class="btn btn-primary">
+                  Về trang chủ →
+                </a>
+              </div>
+            </div>
+
+          }
+
+        </div>
+
+        <!-- RIGHT: SIDEBAR BENEFITS -->
+        <aside class="order-sidebar">
+
+          <div class="sidebar-card">
+            <h3>Quy trình làm việc</h3>
+            <ol class="step-list">
+              <li>
+                <strong>01. Tiếp nhận & Phân tích</strong>
+                <p>Khảo sát bài toán kỹ thuật và đề xuất giải pháp tối ưu chi phí.</p>
+              </li>
+              <li>
+                <strong>02. Báo giá & Demo thực nghiệm</strong>
+                <p>Cung cấp bản demo mô phỏng trực tiếp trên thiết bị thực tế.</p>
+              </li>
+              <li>
+                <strong>03. Triển khai & Cấu hình</strong>
+                <p>Lắp đặt nhanh chóng trong vòng 48h trên toàn quốc.</p>
+              </li>
+              <li>
+                <strong>04. Bảo hành & Hỗ trợ 24/7</strong>
+                <p>Bảo hành chính hãng 24 tháng, cập nhật thuật toán AI định kỳ.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="sidebar-card contact-card">
+            <h3>Hỗ trợ khẩn cấp</h3>
+            <p>Bạn cần tư vấn giải pháp tức thì hoặc hỗ trợ kỹ thuật trực tiếp?</p>
+            <div class="contact-links">
+              <a href="tel:+84123456789" class="contact-item">
+                <span>☎</span>
+                <div>
+                  <small>Hotline tư vấn</small>
+                  <strong>+84 123 456 789</strong>
+                </div>
+              </a>
+              <a href="mailto:contact@aicamera.vn" class="contact-item">
+                <span>✉</span>
+                <div>
+                  <small>Email kỹ thuật</small>
+                  <strong>contact&#64;aicamera.vn</strong>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+

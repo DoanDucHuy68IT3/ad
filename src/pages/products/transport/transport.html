@@ -1,18 +1,194 @@
-<section class="transport-section">
-  <div class="header-container">
-    <h2 class="main-title">Achieve immediate, organization-wide results</h2>
-    <p class="subtitle">Accelerate AI deployment and solve complex challenges across the value chain.</p>
-  </div>
+<main class="product-page">
 
-  <div class="grid-container">
-    <div class="card" *ngFor="let item of features">
-      <div class="image-wrapper">
-        <img [src]="item.imageUrl" [alt]="item.title" />
+  <!-- HERO -->
+  <section class="product-hero">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="eyebrow">TRAFFIC AI · GIAO THÔNG THÔNG MINH</span>
+
+        <h1>
+          Giải pháp giao thông số
+          <span>với Traffic AI thời gian thực.</span>
+        </h1>
+
+        <p class="hero-description">
+          Hệ thống camera AI chuyên dụng giao thông hỗ trợ nhận diện biển số ANPR tốc độ cao,
+          đo đếm mật độ lưu lượng xe và tối ưu hóa chu kỳ đèn tín hiệu giao thông thông minh.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/order" class="btn btn-primary">
+            Yêu cầu giải pháp
+            <span>→</span>
+          </a>
+          <a href="#specifications" class="btn btn-secondary">
+            Thông số kỹ thuật
+          </a>
+        </div>
+
+        <div class="stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
       </div>
-      <div class="content-wrapper">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+
+      <!-- VISUAL -->
+      <div class="product-visual">
+        <div class="visual-glow"></div>
+        <div class="camera-card">
+          <img
+            src="/images/projects/2.avif"
+            alt="Camera AI giao thông thông minh"
+          />
+          <div class="camera-status">
+            <span class="status-dot"></span>
+            TRAFFIC AI ONLINE
+          </div>
+          <div class="camera-info">
+            <strong>EdgeCam Traffic Pro</strong>
+            <span>High-Speed ANPR & Flow System</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION FLOW -->
+  <section class="introduction">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">INTELLIGENT MOBILITY</span>
+        <h2>Điều tiết giao thông <span>dựa trên dữ liệu thực tế.</span></h2>
+        <p>
+          Camera AI nhận diện chính xác từng biển số xe và phân loại lưu lượng theo thời gian thực,
+          cung cấp bức tranh toàn cảnh về dòng chảy giao thông đô thị.
+        </p>
+      </div>
+
+      <div class="vision-flow">
+        <div class="flow-item">
+          <span>01</span>
+          <strong>CAPTURE</strong>
+          <p>Chụp ảnh biển số xe rõ nét ngay cả ở tốc độ cao 200 km/h.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>02</span>
+          <strong>RECOGNIZE</strong>
+          <p>Mô hình OCR & Vision nhận diện biển số, màu sơn, loại xe.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>03</span>
+          <strong>DISPATCH</strong>
+          <p>Truyền dữ liệu về trung tâm điều hành và điều chỉnh đèn tín hiệu.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">NĂNG LỰC HỆ THỐNG</span>
+          <h2>Bộ tính năng toàn diện <span>cho quản lý giao thông.</span></h2>
+        </div>
+        <p>Đáp ứng đầy đủ các tiêu chuẩn kỹ thuật của các dự án giao thông thông minh cấp quốc gia.</p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.number) {
+          <article class="feature-card">
+            <span class="feature-number">{{ feature.number }}</span>
+            <div class="feature-icon">◉</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="specifications" id="specifications">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">THÔNG SỐ PHẦN CỨNG</span>
+        <h2>Độ tin cậy hàng đầu <span>cho hạ tầng giao thông.</span></h2>
+      </div>
+
+      <div class="spec-grid">
+        @for (spec of specs; track spec.label) {
+          <div class="spec">
+            <span>{{ spec.label }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">MÔ HÌNH TRIỂN KHAI</span>
+          <h2>Ứng dụng thực tiễn <span>trong đô thị & đường cao tốc.</span></h2>
+        </div>
+      </div>
+
+      <div class="application-list">
+        @for (application of applications; track application.title) {
+          <article class="application-card">
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            />
+            <div class="application-overlay">
+              <span>0{{ $index + 1 }}</span>
+              <h3>{{ application.title }}</h3>
+              <p>{{ application.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="product-cta">
+    <div class="cta-container">
+      <span class="eyebrow">HIỆN ĐẠI HÓA HẠ TẦNG</span>
+      <h2>Sẵn sàng triển khai <span>Traffic AI cho dự án của bạn?</span></h2>
+      <p>
+        Liên hệ với đội ngũ kỹ sư của chúng tôi để được tư vấn thiết kế giải pháp
+        phù hợp với quy chuẩn giao thông và hạ tầng hiện hữu.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/order" class="btn btn-primary">
+          Đăng ký tư vấn
+          <span>→</span>
+        </a>
+        <a routerLink="/solutions" class="btn btn-secondary">
+          Xem giải pháp khác
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
