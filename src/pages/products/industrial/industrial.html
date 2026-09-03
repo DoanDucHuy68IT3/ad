@@ -1,1 +1,194 @@
-<p>industrial works!</p>
+<main class="product-page">
+
+  <!-- HERO -->
+  <section class="product-hero">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="eyebrow">INDUSTRIAL IOT · SMART FACTORY</span>
+
+        <h1>
+          Số hóa nhà máy toàn diện
+          <span>với Industrial IoT & AI.</span>
+        </h1>
+
+        <p class="hero-description">
+          Kết nối máy móc cũ và mới, giám sát trạng thái thiết bị theo thời gian thực,
+          ứng dụng thị giác máy kiểm tra lỗi sản phẩm và bảo trì dự đoán giúp tối ưu hóa hiệu suất OEE.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/order" class="btn btn-primary">
+            Tư vấn giải pháp
+            <span>→</span>
+          </a>
+          <a href="#specifications" class="btn btn-secondary">
+            Thông số kỹ thuật
+          </a>
+        </div>
+
+        <div class="stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="product-visual">
+        <div class="visual-glow"></div>
+        <div class="camera-card">
+          <img
+            src="/images/product/industrial/1.jpeg"
+            alt="IoT Công nghiệp và Nhà máy thông minh"
+          />
+          <div class="camera-status">
+            <span class="status-dot"></span>
+            FACTORY GATEWAY ONLINE
+          </div>
+          <div class="camera-info">
+            <strong>Industrial IoT Gateway</strong>
+            <span>Multi-protocol Edge Device</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION FLOW -->
+  <section class="introduction">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">INDUSTRY 4.0</span>
+        <h2>Mở khóa tiềm năng dữ liệu <span>từ mọi cỗ máy.</span></h2>
+        <p>
+          Phá bỏ các ốc đảo dữ liệu (data silos) giữa tầng vận hành sản xuất (OT) và tầng công nghệ thông tin (IT).
+          Đưa dữ liệu máy móc lên dashboard quản lý trong thời gian thực.
+        </p>
+      </div>
+
+      <div class="vision-flow">
+        <div class="flow-item">
+          <span>01</span>
+          <strong>CONNECT</strong>
+          <p>Thu thập dữ liệu cảm biến và PLC qua Modbus, OPC UA và Profinet.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>02</span>
+          <strong>EDGE AI</strong>
+          <p>Xử lý dữ liệu rung chấn, kiểm tra ngoại quan ngay tại thiết bị.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>03</span>
+          <strong>OPTIMIZE</strong>
+          <p>Phân tích chỉ số OEE, cảnh báo sự cố và tối ưu tiêu hao năng lượng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">NĂNG LỰC CỐT LÕI</span>
+          <h2>Giải pháp toàn diện <span>cho sản xuất thông minh.</span></h2>
+        </div>
+        <p>Được thiết kế theo tiêu chuẩn công nghiệp nặng, hoạt động bền bỉ trong môi trường khắc nghiệt.</p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.number) {
+          <article class="feature-card">
+            <span class="feature-number">{{ feature.number }}</span>
+            <div class="feature-icon">◉</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="specifications" id="specifications">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">THÔNG SỐ PHẦN CỨNG</span>
+        <h2>Độ tin cậy tuyệt đối <span>cho dây chuyền sản xuất.</span></h2>
+      </div>
+
+      <div class="spec-grid">
+        @for (spec of specs; track spec.label) {
+          <div class="spec">
+            <span>{{ spec.label }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">ỨNG DỤNG NGÀNH</span>
+          <h2>Đã triển khai thành công <span>tại các nhà máy lớn.</span></h2>
+        </div>
+      </div>
+
+      <div class="application-list">
+        @for (application of applications; track application.title) {
+          <article class="application-card">
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            />
+            <div class="application-overlay">
+              <span>0{{ $index + 1 }}</span>
+              <h3>{{ application.title }}</h3>
+              <p>{{ application.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="product-cta">
+    <div class="cta-container">
+      <span class="eyebrow">CHUYỂN ĐỔI SỐ SẢN XUẤT</span>
+      <h2>Sẵn sàng xây dựng <span>Nhà máy thông minh?</span></h2>
+      <p>
+        Liên hệ với chúng tôi để kết nối thử nghiệm thí điểm 01 dây chuyền sản xuất trong vòng 1 tuần
+        và kiểm chứng hiệu quả đo lường OEE thực tế.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/order" class="btn btn-primary">
+          Đặt hàng & Thử nghiệm
+          <span>→</span>
+        </a>
+        <a routerLink="/solutions" class="btn btn-secondary">
+          Xem giải pháp khác
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -1,1 +1,194 @@
-<p>agriculture works!</p>
+<main class="product-page">
+
+  <!-- HERO -->
+  <section class="product-hero">
+    <div class="hero-container">
+
+      <div class="hero-content">
+        <span class="eyebrow">AGRICULTURE IOT · NÔNG NGHIỆP THÔNG MINH</span>
+
+        <h1>
+          Canh tác chuẩn xác với
+          <span>IoT & Trí tuệ nhân tạo.</span>
+        </h1>
+
+        <p class="hero-description">
+          Hệ sinh thái Smart Farm kết hợp cảm biến đất chuyên sâu, trạm vi khí hậu và AI Vision
+          giúp nâng cao năng suất cây trồng, tiết kiệm tài nguyên và bảo vệ môi trường.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/order" class="btn btn-primary">
+            Nhận báo giá
+            <span>→</span>
+          </a>
+          <a href="#specifications" class="btn btn-secondary">
+            Xem thông số kỹ thuật
+          </a>
+        </div>
+
+        <div class="stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="product-visual">
+        <div class="visual-glow"></div>
+        <div class="camera-card">
+          <img
+            src="/images/product/agriculture/1.jpeg"
+            alt="Nông nghiệp thông minh IoT"
+          />
+          <div class="camera-status">
+            <span class="status-dot"></span>
+            SMART SENSOR ONLINE
+          </div>
+          <div class="camera-info">
+            <strong>Smart Farm Node</strong>
+            <span>Agri-IoT Sensing System</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION FLOW -->
+  <section class="introduction">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">DATA-DRIVEN FARMING</span>
+        <h2>Từ dữ liệu cảm biến <span>đến năng suất vượt trội.</span></h2>
+        <p>
+          Không còn dựa vào phán đoán cảm tính. Nền tảng IoT liên tục đo lường mọi thông số
+          vi mô trong lòng đất và bầu khí quyển để đưa ra hành động tối ưu.
+        </p>
+      </div>
+
+      <div class="vision-flow">
+        <div class="flow-item">
+          <span>01</span>
+          <strong>SENSE</strong>
+          <p>Thu thập thông số đất, nhiệt độ, độ ẩm và bức xạ mặt trời.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>02</span>
+          <strong>ANALYZE</strong>
+          <p>Thuật toán phân tích nhu cầu nước và dự báo rủi ro sâu bệnh.</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-item">
+          <span>03</span>
+          <strong>AUTOMATE</strong>
+          <p>Tự động điều tiết van tưới, hệ thống phun sương và quạt gió.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">TÍNH NĂNG CỐT LÕI</span>
+          <h2>Giải pháp toàn diện <span>cho nông nghiệp hiện đại.</span></h2>
+        </div>
+        <p>Được thiết kế bền bỉ để vận hành liên tục trong điều kiện ngoài trời khắc nghiệt.</p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.number) {
+          <article class="feature-card">
+            <span class="feature-number">{{ feature.number }}</span>
+            <div class="feature-icon">◉</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="specifications" id="specifications">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="eyebrow">THÔNG SỐ KỸ THUẬT</span>
+        <h2>Công nghệ bền bỉ <span>dành cho môi trường khắc nghiệt.</span></h2>
+      </div>
+
+      <div class="spec-grid">
+        @for (spec of specs; track spec.label) {
+          <div class="spec">
+            <span>{{ spec.label }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">MÔ HÌNH ỨNG DỤNG</span>
+          <h2>Ứng dụng thực tế <span>trong nông nghiệp.</span></h2>
+        </div>
+      </div>
+
+      <div class="application-list">
+        @for (application of applications; track application.title) {
+          <article class="application-card">
+            <img
+              [src]="application.image"
+              [alt]="application.title"
+              loading="lazy"
+            />
+            <div class="application-overlay">
+              <span>0{{ $index + 1 }}</span>
+              <h3>{{ application.title }}</h3>
+              <p>{{ application.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="product-cta">
+    <div class="cta-container">
+      <span class="eyebrow">BẮT ĐẦU NGAY HÔM NAY</span>
+      <h2>Sẵn sàng số hóa <span>trang trại của bạn?</span></h2>
+      <p>
+        Liên hệ với chúng tôi để được khảo sát trang trại miễn phí
+        và nhận thiết kế hệ thống IoT phù hợp với từng loại cây trồng.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/order" class="btn btn-primary">
+          Đặt hàng & Tư vấn
+          <span>→</span>
+        </a>
+        <a routerLink="/solutions" class="btn btn-secondary">
+          Xem các giải pháp khác
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
