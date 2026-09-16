@@ -23,7 +23,7 @@ export class ProjectService {
       description:
         'Triển khai hệ thống camera AI và IoT quy mô lớn nhằm giám sát giao thông, mật độ phương tiện, phát hiện sự cố và cung cấp dữ liệu thời gian thực phục vụ công tác quản lý đô thị.',
 
-      image: 'images/projects/1.jpg',
+      image: '/images/projects/1.jpg',
       video: '/videos/project-01.mp4',
 
       tags: [
@@ -49,7 +49,7 @@ export class ProjectService {
       description:
         'Xây dựng hệ thống AI phân tích hình ảnh giao thông, tự động phát hiện ùn tắc, tai nạn, phương tiện vi phạm và phân tích lưu lượng giao thông theo thời gian thực.',
 
-      image: 'images/projects/2.avif',
+      image: '/images/projects/2.avif',
       video: '/videos/project-01.mp4',
 
       tags: [
@@ -75,7 +75,7 @@ export class ProjectService {
       description:
         'Triển khai mạng lưới camera AI kết hợp nền tảng phân tích tập trung, hỗ trợ phát hiện tình huống bất thường, xâm nhập khu vực hạn chế và cảnh báo sự cố theo thời gian thực.',
 
-      image: 'images/projects/3.avif',
+      image: '/images/projects/3.avif',
       video: '/videos/project-01.mp4',
 
       tags: [
@@ -101,7 +101,7 @@ export class ProjectService {
       description:
         'Xây dựng mạng lưới cảm biến IoT thu thập dữ liệu môi trường theo thời gian thực, kết hợp nền tảng phân tích dữ liệu và cảnh báo sớm các chỉ số bất thường.',
 
-      image: 'images/projects/4.avif',
+      image: '/images/projects/4.avif',
       video: '/videos/project-01.mp4',
 
       tags: [
@@ -127,7 +127,7 @@ export class ProjectService {
       description:
         'Xây dựng nền tảng tích hợp dữ liệu từ camera, cảm biến và các hệ thống IoT, cung cấp dashboard tập trung hỗ trợ lãnh đạo theo dõi tình hình và ra quyết định dựa trên dữ liệu.',
 
-      image: 'images/projects/5.avif',
+      image: '/images/projects/5.avif',
       video: '/videos/project-01.mp4',
 
       tags: [
@@ -153,7 +153,7 @@ export class ProjectService {
       description:
         'Triển khai hệ thống AI và IoT giám sát hạ tầng, an toàn lao động, môi trường và hoạt động vận hành trong khu công nghiệp trên một nền tảng quản lý tập trung.',
 
-      image: 'images/projects/6.avif',
+      image: '/images/projects/6.avif',
       video: '/videos/project-01.mp4',
 
       tags: [

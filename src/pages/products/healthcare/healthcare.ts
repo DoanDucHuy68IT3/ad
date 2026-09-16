@@ -13,32 +13,32 @@ export class Healthcare {
   {
     title: 'Tự động kiểm tra chất lượng',
     description: 'Phát hiện sớm các vấn đề về chất lượng trong sản xuất dược phẩm và thiết bị y tế. AI có thể phát hiện tạp chất, các khuyết tật vi mô và lỗi về bao bì.',
-    image: 'images/product/cameras/camera-01.jpeg'
+    image: '/images/product/cameras/camera-01.jpeg'
   },
   {
     title: 'Xác minh thuốc và đơn thuốc',
     description: 'Sử dụng AI Vision để đếm chính xác số lượng thuốc, kiểm tra đơn thuốc và tự động cập nhật tồn kho.',
-    image: 'images/product/healthcare/1-2.avif'
+    image: '/images/product/healthcare/1-2.avif'
   },
   {
     title: 'Tối ưu vận hành',
     description: 'Chuyển đổi tài liệu thành dữ liệu có cấu trúc và tự động hóa các công việc hành chính.',
-    image: 'images/product/healthcare/1-3.avif'
+    image: '/images/product/healthcare/1-3.avif'
   },
   {
     title: 'Hỗ trợ quy trình và đào tạo',
     description: 'Theo dõi các quy trình phức tạp và cung cấp hướng dẫn theo thời gian thực cho bác sĩ và nhân viên y tế.',
-    image: 'images/product/healthcare/1-4.avif'
+    image: '/images/product/healthcare/1-4.avif'
   },
   {
     title: 'Phân tích hình ảnh y tế',
     description: 'Tự động phát hiện các dấu hiệu bất thường trên hình ảnh X-quang, MRI và các dữ liệu hình ảnh y tế khác.',
-    image: 'images/product/healthcare/1-5.avif'
+    image: '/images/product/healthcare/1-5.avif'
   },
   {
     title: 'Chăm sóc và giám sát bệnh nhân',
     description: 'Tự động đọc các chỉ số từ thiết bị y tế, theo dõi việc sử dụng thuốc và phát hiện sớm các tình huống nguy hiểm.',
-    image: 'images/product/healthcare/1-6.avif'
+    image: '/images/product/healthcare/1-6.avif'
   }
 ];
 

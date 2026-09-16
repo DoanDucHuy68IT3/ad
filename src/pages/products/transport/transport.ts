@@ -1,50 +1,93 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-interface TransportFeature {
-  title: string;
-  description: string;
-  imageUrl: string;
-}
+import {
+  ChangeDetectionStrategy,
+  Component
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-transport',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterLink],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './transport.html',
-  styleUrl: './transport.css',
+  styleUrl: './transport.css'
 })
 export class Transport {
-  features: TransportFeature[] = [
+
+  stats = [
     {
-      title: 'Monitor real-time events',
-      description: 'Trigger actions based on the flow of people and vehicles. Identify accidents or breakdowns and alert emergency services. Optimize traffic signals patterns according to congestion. Enforce road occupancy rules for smoother public transport.',
-      imageUrl: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80'
+      value: '99.8%',
+      label: 'Độ chính xác nhận diện biển số'
     },
     {
-      title: 'Analyze operational trends',
-      description: 'Record trends in the utilization of facilities, equipment, and roads. Identify open parking spots, count people on public transport, detect baggage bottlenecks, or gather vehicle data in order to improve resource allocation and decision making.',
-      imageUrl: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80'
+      value: '<0.1s',
+      label: 'Phát hiện sự cố va chạm'
     },
     {
-      title: 'Enhance safety and compliance',
-      description: 'Reduce accidents and ensure regulatory compliance. Trigger alerts for people and objects in the path of vehicles. Ensure safety equipment is placed in correct areas. Monitor human-machine interactions and usage of PPE.',
-      imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'
+      value: '200 km/h',
+      label: 'Tốc độ xe tối đa nhận diện'
     },
     {
-      title: 'Elevate customer experience',
-      description: 'Improve facility layout by identifying congestion points in airports, train stations, and other facilities. Speed up processes, like baggage sorting, by recognizing objects or reading tags. Update informational displays and wait times based on real-time data.',
-      imageUrl: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      title: 'Guide automated machinery',
-      description: 'Direct autonomous ground support equipment, forklifts, carts, and other vehicles. Read license plates and automate access control in parking lots. Support collision avoidance and automated navigation.',
-      imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      title: 'Predict infrastructure maintenance',
-      description: 'Automate inspections of critical assets like aircrafts and vehicle parts, identifying signs of wear or damage. Detect structural damage in roads, bridges, and facilities. Proactively schedule maintenance and avoid costly disruptions.',
-      imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80'
+      value: '24/7',
+      label: 'Giám sát ngày đêm xuyên sương mù'
     }
   ];
+
+  features = [
+    {
+      number: '01',
+      title: 'Nhận diện biển số xe tự động (ANPR)',
+      description:
+        'Nhận diện tức thì biển số xe ô tô, xe máy mọi loại biển (trắng, xanh, đỏ, vàng) theo chuẩn Việt Nam với độ chính xác trên 99.8%.'
+    },
+    {
+      number: '02',
+      title: 'Phân tích lưu lượng & Đếm phương tiện',
+      description:
+        'Tự động phân loại xe máy, ô tô con, xe tải, xe buýt; tính toán mật độ lưu thông và tốc độ trung bình trên từng làn đường.'
+    },
+    {
+      number: '03',
+      title: 'Phát hiện sự cố & Vi phạm giao thông',
+      description:
+        'Cảnh báo xe chạy ngược chiều, dừng đỗ sai quy định, vượt đèn đỏ, lấn làn và phát hiện sớm các vụ tai nạn hoặc chết máy giữa đường.'
+    },
+    {
+      number: '04',
+      title: 'Điều phối đèn tín hiệu thông minh',
+      description:
+        'Tích hợp tủ điều khiển đèn tín hiệu NTCIP, tự động co giãn chu kỳ đèn xanh theo mật độ phương tiện thực tế giúp giảm ùn tắc đến 30%.'
+    }
+  ];
+
+  specs = [
+    { label: 'Cảm biến Camera', value: 'Global Shutter 60 FPS chống nhòe hình' },
+    { label: 'Model AI tích hợp', value: 'Edge YOLO-Traffic + Vietnamese ANPR OCR' },
+    { label: 'Vận tốc nhận diện', value: 'Chính xác ở tốc độ lên tới 200 km/h' },
+    { label: 'Hệ thống trợ sáng', value: 'Đèn LED hồng ngoại xung Strobe đồng bộ' },
+    { label: 'Giao thức kết nối', value: 'NTCIP, ONVIF Profile S/G/T, RTSP, REST API' },
+    { label: 'Chuẩn vỏ bảo vệ', value: 'Hợp kim nhôm IP67, chống sét lan truyền 6kV' }
+  ];
+
+  applications = [
+    {
+      title: 'Hệ thống thu phí tự động không dừng (ETC) & Parking',
+      description:
+        'Kiểm soát phương tiện ra vào trạm thu phí, bãi đỗ thông minh không cần người soát vé.',
+      image: '/images/projects/2.avif'
+    },
+    {
+      title: 'Giám sát nút giao trọng điểm & Đô thị thông minh',
+      description:
+        'Điều tiết dòng phương tiện giờ cao điểm, giảm thiểu ùn ứ tại các ngã tư trung tâm.',
+      image: '/images/projects/1.jpg'
+    },
+    {
+      title: 'Tuyến đường cao tốc & Cầu đường huyết mạch',
+      description:
+        'Phát hiện phương tiện dừng đỗ khẩn cấp, sự cố rơi vãi chướng ngại vật trên đường.',
+      image: '/images/projects/6.avif'
+    }
+  ];
+
 }

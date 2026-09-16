@@ -21,7 +21,7 @@ export class ApplicationsComponent {
       'Tối ưu lịch làm việc',
       'Phân tích lượng khách theo giờ'
     ],
-    image: 'assets/applications/coffee.jpg'
+    image: '/images/solutions/coffee-shop.webp'
   },
 
   {
@@ -33,7 +33,7 @@ export class ApplicationsComponent {
       'Phát hiện kệ hàng trống',
       'Tối ưu bố trí cửa hàng'
     ],
-    image: 'assets/applications/retail.jpg'
+    image: '/images/solutions/retail.webp'
   },
 
   {
@@ -45,7 +45,7 @@ export class ApplicationsComponent {
       'Phát hiện lỗi tự động',
       'Cảnh báo sự cố tức thì'
     ],
-    image: 'assets/applications/factory.jpg'
+    image: '/images/solutions/factory.webp'
   },
 
   {
@@ -57,7 +57,7 @@ export class ApplicationsComponent {
       'Theo dõi môi trường',
       'Tiết kiệm nước & chi phí'
     ],
-    image: 'assets/applications/agriculture.jpg'
+    image: '/images/product/agriculture/1.jpeg'
   },
 
   {
@@ -69,7 +69,7 @@ export class ApplicationsComponent {
       'Phát hiện bất thường', 
       'Quản lý môi trường thông minh'
     ],
-    image: 'assets/applications/healthcare.jpg'
+    image: '/images/product/healthcare/11.jpeg'
   }
 
 ];
