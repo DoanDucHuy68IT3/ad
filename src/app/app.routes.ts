@@ -78,14 +78,6 @@ export const routes: Routes = [
         .then((m) => m.SmartHome)
   },
 
-  {
-    path: 'products/transport',
-
-    loadComponent: () =>
-      import('../pages/products/transport/transport')
-        .then((m) => m.Transport)
-  },
-
 
   // =====================================================
   // SOLUTIONS
@@ -108,14 +100,8 @@ export const routes: Routes = [
   }, 
   {
     path: 'transport', 
-    component: Transport
+    component: Location
   }, 
-  {
-    path: 'order',
-    loadComponent: () =>
-      import('../pages/order/order.component')
-        .then((m) => m.OrderComponent)
-  },
   
 
 

@@ -1,12 +1,12 @@
 .hero {
   position: relative;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 
   display: flex;
   align-items: center;
 
-  padding: 130px 6vw 90px;
+  padding: 70px 6vw 100px;
 
   background: #fff;
 
@@ -549,8 +549,8 @@
     min-height: auto;
 
     padding:
-      115px 6vw
-      80px;
+      70px 6vw
+      90px;
   }
 
 
@@ -590,8 +590,8 @@
     min-height: auto;
 
     padding:
-      95px 5vw
-      65px;
+      55px 5vw
+      75px;
   }
 
 
